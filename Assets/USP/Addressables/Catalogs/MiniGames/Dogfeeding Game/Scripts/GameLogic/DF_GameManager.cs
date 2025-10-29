@@ -53,15 +53,6 @@ namespace USP.Minigame.DF_Game
         private void SetScreen()
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
-            // Detect approximate iPad aspect ratio (around 4:3)
-            float aspect = (float)Screen.width / Screen.height;
-
-            // Typical iPad aspect ratios range between 1.3 and 1.4
-            if (aspect > 1.28f && aspect < 1.36f)
-            {
-                camera.orthographicSize = 6f;
-                Debug.Log("Detected iPad-like aspect ratio — orthographicSize set to 6");
-            }
             
         }
 
