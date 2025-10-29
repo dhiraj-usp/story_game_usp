@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 706c1481abb9e4a67bd972f9fb4cdddb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5990030275351194664
+    second: HI_HELLO Dog_Dert_Patch_0
+  - first:
+      213: -4156333843258502927
+    second: HI_HELLO Dog_Dert_Patch_1
+  - first:
+      213: 6450892672380740295
+    second: HI_HELLO Dog_Dert_Patch_2
+  - first:
+      213: -8719438045832555847
+    second: HI_HELLO Dog_Dert_Patch_3
+  - first:
+      213: 341427169875904480
+    second: HI_HELLO Dog_Dert_Patch_4
+  - first:
+      213: 6939074857893566554
+    second: HI_HELLO Dog_Dert_Patch_5
+  - first:
+      213: -6420701980695046485
+    second: HI_HELLO Dog_Dert_Patch_6
+  - first:
+      213: -7713376631379494955
+    second: HI_HELLO Dog_Dert_Patch_7
+  - first:
+      213: 987311831475095604
+    second: HI_HELLO Dog_Dert_Patch_8
+  - first:
+      213: -8453264051679741266
+    second: HI_HELLO Dog_Dert_Patch_9
+  - first:
+      213: -5487255729197223384
+    second: HI_HELLO Dog_Dert_Patch_10
+  - first:
+      213: -3801617951790556892
+    second: HI_HELLO Dog_Dert_Patch_11
+  - first:
+      213: 7239824823486736264
+    second: HI_HELLO Dog_Dert_Patch_12
+  - first:
+      213: -2655977006751267303
+    second: HI_HELLO Dog_Dert_Patch_13
+  - first:
+      213: -4438892365933703634
+    second: HI_HELLO Dog_Dert_Patch_14
+  - first:
+      213: 3680907320964302631
+    second: HI_HELLO Dog_Dert_Patch_15
+  - first:
+      213: -6832403866839093560
+    second: HI_HELLO Dog_Dert_Patch_16
+  - first:
+      213: -7772103503633447749
+    second: HI_HELLO Dog_Dert_Patch_17
+  - first:
+      213: 6160500905874062980
+    second: HI_HELLO Dog_Dert_Patch_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_0
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 915
+        width: 87
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ca4248cccd02350800000000000000
+      internalID: 5990030275351194664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 567
+        width: 132
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f094a8046cb156c0800000000000000
+      internalID: -4156333843258502927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 641
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2ac6d05bc268950800000000000000
+      internalID: 6450892672380740295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_3
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 568
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2df1d7b455ef680800000000000000
+      internalID: -8719438045832555847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_4
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 420
+        width: 95
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7ce19b33efcb400800000000000000
+      internalID: 341427169875904480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_5
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 387
+        width: 97
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58179681db8c4060800000000000000
+      internalID: 6939074857893566554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_6
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 362
+        width: 90
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba65600219515e6a0800000000000000
+      internalID: -6420701980695046485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 280
+        width: 197
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d773db22d494f490800000000000000
+      internalID: -7713376631379494955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_8
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 355
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4380d9531e2a3bd00800000000000000
+      internalID: 987311831475095604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_9
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 263
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaabc0fd129ffaa80800000000000000
+      internalID: -8453264051679741266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 287
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822f87dacf959d3b0800000000000000
+      internalID: -5487255729197223384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_11
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 237
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42996cb5d90fd3bc0800000000000000
+      internalID: -3801617951790556892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 208
+        width: 48
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8876bf79156097460800000000000000
+      internalID: 7239824823486736264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 205
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9164cfcfbf2142bd0800000000000000
+      internalID: -2655977006751267303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_14
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 0
+        width: 213
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e045459e2e562c0800000000000000
+      internalID: -4438892365933703634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_15
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 107
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7274635c4b5351330800000000000000
+      internalID: 3680907320964302631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_16
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 26
+        width: 66
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ceec0bf1ec6e21a0800000000000000
+      internalID: -6832403866839093560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 288
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb40c54ba01f32490800000000000000
+      internalID: -7772103503633447749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_HELLO Dog_Dert_Patch_18
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 38
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e78152fee7e7550800000000000000
+      internalID: 6160500905874062980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HI_HELLO Dog_Dert_Patch_0: 5990030275351194664
+      HI_HELLO Dog_Dert_Patch_1: -4156333843258502927
+      HI_HELLO Dog_Dert_Patch_10: -5487255729197223384
+      HI_HELLO Dog_Dert_Patch_11: -3801617951790556892
+      HI_HELLO Dog_Dert_Patch_12: 7239824823486736264
+      HI_HELLO Dog_Dert_Patch_13: -2655977006751267303
+      HI_HELLO Dog_Dert_Patch_14: -4438892365933703634
+      HI_HELLO Dog_Dert_Patch_15: 3680907320964302631
+      HI_HELLO Dog_Dert_Patch_16: -6832403866839093560
+      HI_HELLO Dog_Dert_Patch_17: -7772103503633447749
+      HI_HELLO Dog_Dert_Patch_18: 6160500905874062980
+      HI_HELLO Dog_Dert_Patch_2: 6450892672380740295
+      HI_HELLO Dog_Dert_Patch_3: -8719438045832555847
+      HI_HELLO Dog_Dert_Patch_4: 341427169875904480
+      HI_HELLO Dog_Dert_Patch_5: 6939074857893566554
+      HI_HELLO Dog_Dert_Patch_6: -6420701980695046485
+      HI_HELLO Dog_Dert_Patch_7: -7713376631379494955
+      HI_HELLO Dog_Dert_Patch_8: 987311831475095604
+      HI_HELLO Dog_Dert_Patch_9: -8453264051679741266
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

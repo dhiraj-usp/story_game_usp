@@ -24,7 +24,7 @@ namespace USP.Minigame.DF_Game
         public Action OnTiltThresholdReached;
 
         private Vector3 dragOffset;
-        private float currentTilt = 0f;
+        [SerializeField] private float currentTilt = 0f;
         private bool isDragging = false;
         private bool thresholdTriggered = false;
 
