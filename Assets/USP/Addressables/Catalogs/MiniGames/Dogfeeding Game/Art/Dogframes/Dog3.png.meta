@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d5ea5bb32155d4747a3c7bfb3a4fd7dc
+guid: fdb2d0f6954704a7fa2456d6afa13ff9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8626682708268857400
-    second: BUSHES BACKGROUND_A_0
+      213: -4323645920377099790
+    second: Dog 1024X1024_B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BUSHES BACKGROUND_A_0
+      name: Dog 1024X1024_B_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
-        height: 1344
+        width: 1024
+        height: 905
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 838be50973228b770800000000000000
-      internalID: 8626682708268857400
+      spriteID: 2f92b5d61f25ff3c0800000000000000
+      internalID: -4323645920377099790
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BUSHES BACKGROUND_A_0: 8626682708268857400
+      Dog 1024X1024_B_0: -4323645920377099790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

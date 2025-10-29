@@ -14,7 +14,7 @@ namespace USP.Minigame.DF_Game
         private Vector3 _startPos;
         private float _randomOffset;
         
-        [SerializeField] private DF_GameManager gameManager;
+        [SerializeField] private DogBathManager gameManager;
         [SerializeField] private ParticleSystem burstParticlePrefab; 
 
         private void Start()
@@ -38,7 +38,7 @@ namespace USP.Minigame.DF_Game
         public void OnClicked()
         {
             Debug.Log("Bath Bubble Clicked");
-            gameManager.OnClickonBathBubble(this);
+            gameManager.OnClickOnBathBubble(this);
         }
         
         public void PopBubble()
