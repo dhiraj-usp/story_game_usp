@@ -28,7 +28,7 @@ public class DoghouseSequence : MonoBehaviour, IPointerClickHandler
     [SerializeField] private RectTransform bubbleGirlHiPrefab;    // orange "HI"
     [SerializeField] private RectTransform bubbleGirlHowPrefab;   // "HOW ARE YOU?"
 
-    [Header("Choice Buttons (SCENE objects under Canvas, disabled at start)")]
+    [Header("Choice ClikcableObject (SCENE objects under Canvas, disabled at start)")]
     [SerializeField] private Button hungryButton;   // Button (TMP) in scene under Canvas
     [SerializeField] private Button stinkyButton;   // Button (TMP) in scene under Canvas
 
