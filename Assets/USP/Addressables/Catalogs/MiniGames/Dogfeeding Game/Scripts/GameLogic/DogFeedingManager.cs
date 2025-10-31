@@ -157,14 +157,14 @@ namespace USP.Minigame.DF_Game
                 ShineParticles.Play();
                 ResetDogFeeding();
                 gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Feeding, true);
-                
+                StartCoroutine(FeedingSequenceCompleted());
             }
         }
 
         private IEnumerator FeedingSequenceCompleted()
         {
-            yield return new WaitForSeconds(0.5f);
-            
+            yield return new WaitForSeconds(1f);
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
         }
         
     }

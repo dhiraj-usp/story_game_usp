@@ -27,6 +27,9 @@ namespace USP.Minigame.DF_Game
         
         [SerializeField] private DF_GameManager gameManager;
 
+        [SerializeField] private GameObject feedingstatus;
+        [SerializeField] private GameObject bathstatus;
+        
         private void Start()
         {
             
@@ -35,6 +38,12 @@ namespace USP.Minigame.DF_Game
         private void OnEnable()
         {
             
+        }
+
+        public void CheckMiniGameStatus()
+        {
+            feedingstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding));
+            bathstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath));
         }
 
         private void OnDisable()
@@ -56,6 +65,7 @@ namespace USP.Minigame.DF_Game
         [ContextMenu("Initialize")]
         public void InitializeGame()
         {
+            
             Debug.Log("Game initialized. Waiting for kennel click...");
             door.OnClick += OnKennelClicked;
             bathsbutton.OnClick += OnBathSelected;
@@ -128,7 +138,7 @@ namespace USP.Minigame.DF_Game
         private void PlayDogEntranceAnimation()
         {
             if (dogAnimator != null)
-                dogAnimator.SetTrigger("WalkOut");
+                dogAnimator.SetTrigger("DogOut");
         }
 
         /// <summary>
@@ -136,7 +146,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private IEnumerator DialogueSequence()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
 
             ShowGirlSpeech(0); // “Hi”
             yield return new WaitForSeconds(2.2f);

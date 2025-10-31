@@ -40,6 +40,11 @@ namespace USP.Minigame.DF_Game
             gameProgress.Where(x=>x.gamePhase == gamePhase).FirstOrDefault().IsCompleted = isCompleted;
         }
 
+        public bool GetGameProgress(GamePhases gamePhase)
+        {
+            return gameProgress.Where(x => x.gamePhase == gamePhase).FirstOrDefault().IsCompleted;
+        }
+
         public void ChangeGamePhase(GamePhases phase)
         {
             gamePhase = phase;
@@ -69,6 +74,7 @@ namespace USP.Minigame.DF_Game
             {
                 case GamePhases.GameStart:
                     mainscene.SetActive(true);
+                    uiGameManager.CheckMiniGameStatus();
                     break;
                 case GamePhases.Feeding:
                     feedscene.SetActive(true);
@@ -78,6 +84,7 @@ namespace USP.Minigame.DF_Game
                     break;
                 case GamePhases.GameEnd:
                     mainscene.SetActive(true);
+                    uiGameManager.CheckMiniGameStatus();
                     break;
                 default:
                     break;
