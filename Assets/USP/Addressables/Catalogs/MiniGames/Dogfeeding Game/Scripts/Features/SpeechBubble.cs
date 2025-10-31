@@ -14,22 +14,17 @@ public class SpeechBubbleImage : MonoBehaviour
     private SpriteRenderer bubbleRenderer;
     private Transform target;
     private Coroutine activeRoutine;
+    private Vector3 originalScale;
 
     private void Awake()
     {
         bubbleRenderer = GetComponent<SpriteRenderer>();
+        originalScale = transform.localScale;   // store the original size
         bubbleRenderer.enabled = false;
         transform.localScale = Vector3.zero;
     }
 
-    private void LateUpdate()
-    {
-        if (target != null)
-            transform.position = target.position + offset;
 
-        if (faceCamera && gamecamera != null)
-            transform.rotation = Quaternion.identity; // keep facing forward for 2D
-    }
 
     public void AttachTo(Transform targetTransform)
     {
@@ -37,7 +32,7 @@ public class SpeechBubbleImage : MonoBehaviour
     }
 
     [ContextMenu("Show Bubble Image")]
-    public void test1()
+    public void Test1()
     {
         ShowBubble(1);
     }
@@ -45,7 +40,7 @@ public class SpeechBubbleImage : MonoBehaviour
     /// <summary>
     /// Show a specific speech bubble image by index.
     /// </summary>
-    public void ShowBubble(int index, float duration = -1f)
+    public void ShowBubble(int index, float duration = -1f,bool shouldpopout = true)
     {
         if (index < 0 || index >= bubbleSprites.Length)
         {
@@ -56,31 +51,33 @@ public class SpeechBubbleImage : MonoBehaviour
         if (activeRoutine != null)
             StopCoroutine(activeRoutine);
 
-        activeRoutine = StartCoroutine(ShowRoutine(bubbleSprites[index], duration > 0 ? duration : showDuration));
+        activeRoutine = StartCoroutine(ShowRoutine(bubbleSprites[index], duration > 0 ? duration : showDuration,shouldpopout));
     }
 
-    private IEnumerator ShowRoutine(Sprite sprite, float duration)
+    private IEnumerator ShowRoutine(Sprite sprite, float duration,bool shouldpopout)
     {
         bubbleRenderer.sprite = sprite;
         bubbleRenderer.enabled = true;
 
-        // Pop in
+        // Pop in to original scale
         float t = 0f;
         while (t < 0.2f)
         {
             t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t / 0.2f);
+            transform.localScale = Vector3.Lerp(Vector3.zero, originalScale, t / 0.2f);
             yield return null;
         }
 
         yield return new WaitForSeconds(duration);
-
-        // Pop out
+        
+        if(!shouldpopout)
+            yield break;
+        // Pop out back to zero
         t = 0f;
         while (t < 0.2f)
         {
             t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t / 0.2f);
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t / 0.2f);
             yield return null;
         }
 

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 89a747edca9b142ffa0cccf77cd5bb54
+guid: cba3d414f05e7274da216a4e0a500a97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2091048378594516582
-    second: STINKY__0
-  - first:
-      213: 7449722771297376163
-    second: STINKY__1
-  - first:
-      213: 6703575621135005078
-    second: STINKY__2
-  - first:
-      213: -9065033096990705735
-    second: STINKY__3
+      213: -6926556613361460096
+    second: STAR_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,13 +47,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -118,39 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: STINKY__0
+      name: STAR_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 175
-        width: 37
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a91a7b9149a1bf2e0800000000000000
-      internalID: -2091048378594516582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STINKY__1
-      rect:
-        serializedVersion: 2
-        x: 18
         y: 0
-        width: 186
-        height: 241
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a79152e36bb26760800000000000000
-      internalID: 7449722771297376163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STINKY__2
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 185
-        width: 34
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69578b6a282e70d50800000000000000
-      internalID: 6703575621135005078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: STINKY__3
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 133
-        width: 39
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b7b5b84d68823280800000000000000
-      internalID: -9065033096990705735
+      spriteID: 08c15f7657defdf90800000000000000
+      internalID: -6926556613361460096
       vertices: []
       indices: 
       edges: []
@@ -223,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      STINKY__0: -2091048378594516582
-      STINKY__1: 7449722771297376163
-      STINKY__2: 6703575621135005078
-      STINKY__3: -9065033096990705735
+      STAR_0: -6926556613361460096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

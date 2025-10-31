@@ -31,6 +31,7 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private Camera camera;
         [SerializeField] private DogFeedingManager dogFeedingManager;
         [SerializeField] private DogBathManager dogBathManager;
+        [SerializeField] private DF_Ui_GameManager uiGameManager;
         public void UpdateGameProgress(GamePhases gamePhase, bool isCompleted)
         {
             gameProgress.Where(x=>x.gamePhase == gamePhase).FirstOrDefault().IsCompleted = isCompleted;
@@ -46,7 +47,6 @@ namespace USP.Minigame.DF_Game
         private void Start()
         {
             SetScreen();
-           dogFeedingManager.StartDogFeeding();
             
         }
 
@@ -55,6 +55,8 @@ namespace USP.Minigame.DF_Game
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             
         }
+        
+        
 
        
 

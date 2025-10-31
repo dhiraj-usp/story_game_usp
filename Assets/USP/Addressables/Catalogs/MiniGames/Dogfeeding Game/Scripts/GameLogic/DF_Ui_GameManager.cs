@@ -1,50 +1,63 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 namespace USP.Minigame.DF_Game
 {
     public class DF_Ui_GameManager : MonoBehaviour
     {
-        
+        [Header("Speech Bubbles")]
         [SerializeField] private SpeechBubbleImage girlspeechbubble;
         [SerializeField] private SpeechBubbleImage dogspeechbubble;
         [SerializeField] private SpeechBubbleImage feedingspeechbubble;
         [SerializeField] private SpeechBubbleImage bathspeechbubble;
 
+        [Header("Particles")]
         [SerializeField] private ParticleSystem doorknockparticle;
 
+        [Header("Clickable Objects")]
         [SerializeField] private ClikcableObject door;
         [SerializeField] private ClikcableObject bathsbutton;
         [SerializeField] private ClikcableObject feedbutton;
-        
-        
-        
-        // Called when the game starts — initializes the scene
+
+        [Header("Characters")]
+        [SerializeField] private Transform girl;
+        [SerializeField] private Transform dog;
+        [SerializeField] private Animator kennelAnimator;
+        [SerializeField] private Animator dogAnimator;
+
         private void Start()
         {
-            InitializeGame();
+            
         }
 
         private void OnEnable()
         {
-            door.OnClick += OnKennelClicked;
-            bathsbutton.OnClick += OnBathSelected;
-            feedbutton.OnClick += OnFeedingSelected;
-        }
-        private void OnDisable()
-        {
-            door.OnClick -= OnKennelClicked;
-            bathsbutton.OnClick -= OnBathSelected;
-            feedbutton.OnClick -= OnFeedingSelected;
+            
         }
 
+        private void OnDisable()
+        {
+            if(door==null || bathsbutton==null|| feedbutton==null)
+                return;
+            if(door.OnClick != null)
+                door.OnClick -= OnKennelClicked;
+            if(bathsbutton.OnClick != null)
+                bathsbutton.OnClick -= OnBathSelected;
+            if(feedbutton.OnClick != null)
+                feedbutton.OnClick -= OnFeedingSelected;
+        }
 
         /// <summary>
         /// Sets initial state: all UI closed, waits for kennel interaction.
         /// </summary>
+        
+        [ContextMenu("Initialize")]
         private void InitializeGame()
         {
             Debug.Log("Game initialized. Waiting for kennel click...");
+            door.OnClick += OnKennelClicked;
+            bathsbutton.OnClick += OnBathSelected;
+            feedbutton.OnClick += OnFeedingSelected;
             CloseAllUI();
         }
 
@@ -53,7 +66,13 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void CloseAllUI()
         {
-            // TODO: Hide all panels and speech bubbles
+            girlspeechbubble.gameObject.SetActive(false);
+            dogspeechbubble.gameObject.SetActive(false);
+            feedingspeechbubble.gameObject.SetActive(false);
+            bathspeechbubble.gameObject.SetActive(false);
+
+            bathsbutton.gameObject.SetActive(false);
+            feedbutton.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -67,11 +86,12 @@ namespace USP.Minigame.DF_Game
         }
 
         /// <summary>
-        /// Spawns or plays knock particle effect.
+        /// Plays knock particle effect.
         /// </summary>
         private void PlayKnockParticle()
         {
-            // TODO: Instantiate or play knock particle
+            if (doorknockparticle != null)
+                doorknockparticle.Play();
         }
 
         /// <summary>
@@ -79,54 +99,70 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void PlayKennelOpenAnimation()
         {
-            // TODO: Play kennel door animation
-            // On animation end, call OnDogComesOut()
+            if (kennelAnimator != null)
+            {
+                kennelAnimator.SetTrigger("Open");
+                // Assume the kennel animation calls OnDogComesOut() via animation event
+            }
+            else
+            {
+                // fallback
+                OnDogComesOut();
+            }
         }
 
         /// <summary>
         /// Called when dog comes out of the kennel.
         /// </summary>
+       [ContextMenu("Simulate dailouge")]
         public void OnDogComesOut()
         {
             Debug.Log("Dog came out of the kennel.");
             PlayDogEntranceAnimation();
-            ShowInitialDialogue();
+            StartCoroutine(DialogueSequence());
         }
 
-        /// <summary>
-        /// Handles dog's entrance animation.
-        /// </summary>
         private void PlayDogEntranceAnimation()
         {
-            // TODO: Trigger dog animator
+            if (dogAnimator != null)
+                dogAnimator.SetTrigger("WalkOut");
         }
 
         /// <summary>
-        /// Starts the dialogue sequence: Girl Hi → Dog Hi → Girl How are you.
+        /// Full dialogue sequence coroutine: Girl Hi → Dog Hi → Girl How are you → Dog options.
         /// </summary>
-        private void ShowInitialDialogue()
+        private IEnumerator DialogueSequence()
         {
-            Debug.Log("Starting dialogue sequence.");
-            ShowGirlSpeech("Hi!");
-            ShowDogSpeech("Hi!");
-            ShowGirlSpeech("How are you?");
+            yield return new WaitForSeconds(0.5f);
+
+            ShowGirlSpeech(0); // “Hi”
+            yield return new WaitForSeconds(2.2f);
+
+            ShowDogSpeech(0); // “Hi”
+            yield return new WaitForSeconds(2.2f);
+
+            ShowGirlSpeech(1); // “How are you?”
+            yield return new WaitForSeconds(2.2f);
+
             ShowDogOptions();
         }
 
         /// <summary>
         /// Displays a speech bubble for the girl character.
         /// </summary>
-        private void ShowGirlSpeech(string text)
+        private void ShowGirlSpeech(int bubbleIndex)
         {
-            // TODO: Set speech bubble text and enable girl UI
+            girlspeechbubble.gameObject.SetActive(true);
+            girlspeechbubble.ShowBubble(bubbleIndex);
         }
 
         /// <summary>
         /// Displays a speech bubble for the dog character.
         /// </summary>
-        private void ShowDogSpeech(string text)
+        private void ShowDogSpeech(int bubbleIndex)
         {
-            // TODO: Set speech bubble text and enable dog UI
+            dogspeechbubble.gameObject.SetActive(true);
+            dogspeechbubble.ShowBubble(bubbleIndex);
         }
 
         /// <summary>
@@ -135,7 +171,16 @@ namespace USP.Minigame.DF_Game
         private void ShowDogOptions()
         {
             Debug.Log("Showing dog options (Feeding / Bath).");
-            // TODO: Enable option buttons on UI
+
+            bathsbutton.gameObject.SetActive(true);
+            feedbutton.gameObject.SetActive(true);
+
+            bathspeechbubble.gameObject.SetActive(true);
+            feedingspeechbubble.gameObject.SetActive(true);
+
+            // Optional pop animation
+            bathspeechbubble.ShowBubble(0,-1f,false);
+            feedingspeechbubble.ShowBubble(00,-1f,false);
         }
 
         /// <summary>
@@ -161,7 +206,8 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void GoToFeedingSequence()
         {
-            // TODO: Load feeding sequence
+            // You can transition scene or activate feeding phase here
+            Debug.Log("Transition to Feeding mini-game...");
         }
 
         /// <summary>
@@ -169,7 +215,8 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void GoToBathSequence()
         {
-            // TODO: Load bath sequence
+            Debug.Log("Transition to Bath mini-game...");
         }
     }
 }
+
