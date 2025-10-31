@@ -32,6 +32,9 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private DogFeedingManager dogFeedingManager;
         [SerializeField] private DogBathManager dogBathManager;
         [SerializeField] private DF_Ui_GameManager uiGameManager;
+        [SerializeField] private GameObject mainscene;
+        [SerializeField] private GameObject bathscene;
+        [SerializeField] private GameObject feedscene;
         public void UpdateGameProgress(GamePhases gamePhase, bool isCompleted)
         {
             gameProgress.Where(x=>x.gamePhase == gamePhase).FirstOrDefault().IsCompleted = isCompleted;
@@ -40,14 +43,45 @@ namespace USP.Minigame.DF_Game
         public void ChangeGamePhase(GamePhases phase)
         {
             gamePhase = phase;
-           
+            OnChangeGamePhase();
+
+        }
+
+        private void Resetgamephases()
+        {
+            mainscene.SetActive(false);
+            bathscene.SetActive(false);
+            feedscene.SetActive(false);
         }
         
 
         private void Start()
         {
             SetScreen();
-            
+            OnGameStart();
+            ChangeGamePhase(GamePhases.GameStart);
+        }
+
+        private void OnChangeGamePhase()
+        {
+            Resetgamephases();
+            switch (gamePhase)
+            {
+                case GamePhases.GameStart:
+                    mainscene.SetActive(true);
+                    break;
+                case GamePhases.Feeding:
+                    feedscene.SetActive(true);
+                    break;
+                case GamePhases.Bath:
+                    bathscene.SetActive(true);
+                    break;
+                case GamePhases.GameEnd:
+                    mainscene.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void SetScreen()
@@ -55,8 +89,12 @@ namespace USP.Minigame.DF_Game
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             
         }
-        
-        
+
+        private void OnGameStart()
+        {
+            uiGameManager.InitializeGame();
+            
+        }
 
        
 

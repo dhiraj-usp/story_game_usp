@@ -24,6 +24,8 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private Transform dog;
         [SerializeField] private Animator kennelAnimator;
         [SerializeField] private Animator dogAnimator;
+        
+        [SerializeField] private DF_GameManager gameManager;
 
         private void Start()
         {
@@ -52,7 +54,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         
         [ContextMenu("Initialize")]
-        private void InitializeGame()
+        public void InitializeGame()
         {
             Debug.Log("Game initialized. Waiting for kennel click...");
             door.OnClick += OnKennelClicked;
@@ -80,6 +82,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnKennelClicked()
         {
+            door.OnClick-= OnKennelClicked;
             Debug.Log("Kennel clicked!");
             PlayKnockParticle();
             PlayKennelOpenAnimation();
@@ -188,6 +191,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnFeedingSelected()
         {
+            feedbutton.OnClick -= OnFeedingSelected;
             Debug.Log("Feeding sequence selected.");
             GoToFeedingSequence();
         }
@@ -197,6 +201,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnBathSelected()
         {
+            bathsbutton.OnClick -= OnBathSelected;
             Debug.Log("Bath sequence selected.");
             GoToBathSequence();
         }
@@ -207,6 +212,7 @@ namespace USP.Minigame.DF_Game
         private void GoToFeedingSequence()
         {
             // You can transition scene or activate feeding phase here
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Feeding);
             Debug.Log("Transition to Feeding mini-game...");
         }
 
@@ -215,6 +221,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void GoToBathSequence()
         {
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Bath);
             Debug.Log("Transition to Bath mini-game...");
         }
     }

@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 namespace USP.Minigame.DF_Game
 {
@@ -12,12 +12,23 @@ namespace USP.Minigame.DF_Game
 
         [Header("Bubbles")]
         [SerializeField] private List<GameObject> bubbles; // use BathBubble, not GameObject
+        
+        [SerializeField] ParticleSystem shineparticle;
+        
+        [SerializeField] private DF_GameManager gameManager;
 
         private int poppedCount = 0;
         private int nextSpriteThreshold = 5; // change sprite every 5 pops
         private int currentSpriteIndex = 0;
+        
+        
 
         private void Start()
+        {
+            
+        }
+
+        private void OnEnable()
         {
             Initialize();
         }
@@ -55,8 +66,16 @@ namespace USP.Minigame.DF_Game
             // Optionally check for all bubbles cleared
             if (poppedCount >= bubbles.Count)
             {
-                OnBathComplete();
+                StartCoroutine(DogbathComplete());
             }
+        }
+
+        private IEnumerator DogbathComplete()
+        {
+            yield return new WaitForSeconds(0.5f);
+            shineparticle.Play();
+            yield return new WaitForSeconds(2f);
+            OnBathComplete();
         }
 
         private void UpdateDogSprite()
@@ -73,8 +92,10 @@ namespace USP.Minigame.DF_Game
         private void OnBathComplete()
         {
             Debug.Log("Bathing complete! 🎉 Dog is fully clean!");
+            
             // Optionally tell game manager
-            // DF_GameManager.Instance.OnPhaseComplete(DF_GameManager.GamePhases.Bath);
+            gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Bath,true);
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
         }
     }
 }

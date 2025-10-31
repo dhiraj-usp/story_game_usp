@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private Transform SnackParent;
         [SerializeField] private GameObject SnackPrefab;
         [SerializeField] private ParticleSystem SnackParticles;
+        [SerializeField] private ParticleSystem ShineParticles;
         [SerializeField] private Animator SnackAnimator;
         [SerializeField] private Transform SnackPoint;
         [SerializeField] private List<Sprite> SnackSprites;
@@ -26,6 +28,11 @@ namespace USP.Minigame.DF_Game
         private int totalTiltsRequired = 3;
         [SerializeField] private bool isCycleActive = false;
         private bool isSnackDropComplete=false;
+
+        private void OnEnable()
+        {
+            StartDogFeeding();
+        }
 
         public void StartDogFeeding()
         {
@@ -128,6 +135,7 @@ namespace USP.Minigame.DF_Game
 
         private void OnSnackDropComplete()
         {
+           
             isSnackDropComplete = true;
             FoodBox.enabled = false;
             Debug.Log("Feeding Complete! All snacks dropped 🎉");
@@ -146,10 +154,18 @@ namespace USP.Minigame.DF_Game
             if (feedIndex >= totalTiltsRequired)
             {
                 //Feeding complete
+                ShineParticles.Play();
                 ResetDogFeeding();
                 gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Feeding, true);
                 
             }
         }
+
+        private IEnumerator FeedingSequenceCompleted()
+        {
+            yield return new WaitForSeconds(0.5f);
+            
+        }
+        
     }
 }
