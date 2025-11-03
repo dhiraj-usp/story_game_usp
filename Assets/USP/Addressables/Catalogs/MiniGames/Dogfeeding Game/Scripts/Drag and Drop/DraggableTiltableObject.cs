@@ -22,6 +22,7 @@ namespace USP.Minigame.DF_Game
 
         [Header("Action Settings")]
         public Action OnTiltThresholdReached;
+        public Action OnTiltThresholdnotReached;
 
         private Vector3 dragOffset;
         [SerializeField] private float currentTilt = 0f;
@@ -71,11 +72,13 @@ namespace USP.Minigame.DF_Game
                 thresholdTriggered = true;
                 OnTiltThresholdReached?.Invoke();
             }
+            
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             isDragging = false;
+            OnTiltThresholdnotReached?.Invoke();
             StartCoroutine(ReturnToOrigin());
         }
 
