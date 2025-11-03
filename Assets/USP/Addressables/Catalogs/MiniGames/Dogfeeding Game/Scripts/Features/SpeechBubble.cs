@@ -1,86 +1,91 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class SpeechBubbleImage : MonoBehaviour
+namespace USP.Minigame.DF_Game
 {
-    [Header("Bubble Sprites")]
-    [SerializeField] private Sprite[] bubbleSprites; // Assign all your bubble images here
-    [SerializeField] private float showDuration = 2f;
-    [SerializeField] private Vector3 offset = new Vector3(0, 2f, 0);
-    [SerializeField] private bool faceCamera = true;
-    [SerializeField] private Camera gamecamera;
-
-    private SpriteRenderer bubbleRenderer;
-    private Transform target;
-    private Coroutine activeRoutine;
-    private Vector3 originalScale;
-
-    private void Awake()
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class SpeechBubbleImage : MonoBehaviour
     {
-        bubbleRenderer = GetComponent<SpriteRenderer>();
-        originalScale = transform.localScale;   // store the original size
-        bubbleRenderer.enabled = false;
-        transform.localScale = Vector3.zero;
-    }
+        [Header("Bubble Sprites")] [SerializeField]
+        private Sprite[] bubbleSprites; // Assign all your bubble images here
 
+        [SerializeField] private float showDuration = 2f;
+        [SerializeField] private Vector3 offset = new Vector3(0, 2f, 0);
+        [SerializeField] private bool faceCamera = true;
+        [SerializeField] private Camera gamecamera;
 
+        private SpriteRenderer bubbleRenderer;
+        private Transform target;
+        private Coroutine activeRoutine;
+        private Vector3 originalScale;
 
-    public void AttachTo(Transform targetTransform)
-    {
-        target = targetTransform;
-    }
-
-    [ContextMenu("Show Bubble Image")]
-    public void Test1()
-    {
-        ShowBubble(1);
-    }
-
-    /// <summary>
-    /// Show a specific speech bubble image by index.
-    /// </summary>
-    public void ShowBubble(int index, float duration = -1f,bool shouldpopout = true)
-    {
-        if (index < 0 || index >= bubbleSprites.Length)
+        private void Awake()
         {
-            Debug.LogWarning("Invalid bubble index");
-            return;
+            bubbleRenderer = GetComponent<SpriteRenderer>();
+            originalScale = transform.localScale; // store the original size
+            bubbleRenderer.enabled = false;
+            transform.localScale = Vector3.zero;
         }
 
-        if (activeRoutine != null)
-            StopCoroutine(activeRoutine);
 
-        activeRoutine = StartCoroutine(ShowRoutine(bubbleSprites[index], duration > 0 ? duration : showDuration,shouldpopout));
-    }
 
-    private IEnumerator ShowRoutine(Sprite sprite, float duration,bool shouldpopout)
-    {
-        bubbleRenderer.sprite = sprite;
-        bubbleRenderer.enabled = true;
-
-        // Pop in to original scale
-        float t = 0f;
-        while (t < 0.2f)
+        public void AttachTo(Transform targetTransform)
         {
-            t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(Vector3.zero, originalScale, t / 0.2f);
-            yield return null;
+            target = targetTransform;
         }
 
-        yield return new WaitForSeconds(duration);
-        
-        if(!shouldpopout)
-            yield break;
-        // Pop out back to zero
-        t = 0f;
-        while (t < 0.2f)
+        [ContextMenu("Show Bubble Image")]
+        public void Test1()
         {
-            t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t / 0.2f);
-            yield return null;
+            ShowBubble(1);
         }
 
-        bubbleRenderer.enabled = false;
+        /// <summary>
+        /// Show a specific speech bubble image by index.
+        /// </summary>
+        public void ShowBubble(int index, float duration = -1f, bool shouldpopout = true)
+        {
+            if (index < 0 || index >= bubbleSprites.Length)
+            {
+                Debug.LogWarning("Invalid bubble index");
+                return;
+            }
+
+            if (activeRoutine != null)
+                StopCoroutine(activeRoutine);
+
+            activeRoutine = StartCoroutine(ShowRoutine(bubbleSprites[index], duration > 0 ? duration : showDuration,
+                shouldpopout));
+        }
+
+        private IEnumerator ShowRoutine(Sprite sprite, float duration, bool shouldpopout)
+        {
+            bubbleRenderer.sprite = sprite;
+            bubbleRenderer.enabled = true;
+
+            // Pop in to original scale
+            float t = 0f;
+            while (t < 0.2f)
+            {
+                t += Time.deltaTime;
+                transform.localScale = Vector3.Lerp(Vector3.zero, originalScale, t / 0.2f);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(duration);
+
+            if (!shouldpopout)
+                yield break;
+            // Pop out back to zero
+            t = 0f;
+            while (t < 0.2f)
+            {
+                t += Time.deltaTime;
+                transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t / 0.2f);
+                yield return null;
+            }
+
+            bubbleRenderer.enabled = false;
+        }
     }
 }
