@@ -7,8 +7,8 @@ namespace USP.Minigame.DF_Game
     public class DogBathManager : MonoBehaviour
     {
         [Header("Dog Settings")]
-        [SerializeField] private SpriteRenderer dogSpriteRenderer;
-        [SerializeField] private List<Sprite> dogSprites; // cleaner versions in order
+        [SerializeField] private Animator dog;
+         // cleaner versions in order
 
         [Header("Bubbles")]
         [SerializeField] private List<GameObject> bubbles; // use BathBubble, not GameObject
@@ -17,9 +17,9 @@ namespace USP.Minigame.DF_Game
         
         [SerializeField] private DF_GameManager gameManager;
 
-        private int poppedCount = 0;
-        private int nextSpriteThreshold = 5; // change sprite every 5 pops
-        private int currentSpriteIndex = 0;
+        [SerializeField] private int poppedCount = 0;
+        [SerializeField] private int nextSpriteThreshold = 5; // change sprite every 5 pops
+        [SerializeField] private int completedthreshold = 25;
         
         
 
@@ -36,10 +36,9 @@ namespace USP.Minigame.DF_Game
         public void Initialize()
         {
             poppedCount = 0;
-            currentSpriteIndex = 0;
             nextSpriteThreshold = 5;
 
-            dogSpriteRenderer.sprite = dogSprites[0];
+            
 
             // Reactivate and bind bubble click events
             foreach (var bubble in bubbles)
@@ -59,8 +58,8 @@ namespace USP.Minigame.DF_Game
             // Check if it’s time to update dog sprite
             if (poppedCount >= nextSpriteThreshold)
             {
-                UpdateDogSprite();
-                nextSpriteThreshold += 5; // next milestone
+                UpdateDogSprite();// next milestone
+                nextSpriteThreshold += 5;
             }
 
             // Optionally check for all bubbles cleared
@@ -72,6 +71,7 @@ namespace USP.Minigame.DF_Game
 
         private IEnumerator DogbathComplete()
         {
+            UpdateDogSprite();
             yield return new WaitForSeconds(0.5f);
             shineparticle.Play();
             yield return new WaitForSeconds(2f);
@@ -80,13 +80,7 @@ namespace USP.Minigame.DF_Game
 
         private void UpdateDogSprite()
         {
-            currentSpriteIndex++;
-
-            if (currentSpriteIndex < dogSprites.Count)
-            {
-                dogSpriteRenderer.sprite = dogSprites[currentSpriteIndex];
-                Debug.Log($"Dog sprite updated to stage {currentSpriteIndex + 1}");
-            }
+            dog.SetTrigger("Nextstage");
         }
 
         private void OnBathComplete()
