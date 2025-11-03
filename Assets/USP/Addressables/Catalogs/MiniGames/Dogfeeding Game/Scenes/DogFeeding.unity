@@ -5462,8 +5462,8 @@ Transform:
   m_GameObject: {fileID: 1249581015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.15, y: -2.0575, z: -42.5}
-  m_LocalScale: {x: 0.90277, y: 0.90277, z: 0.90277}
+  m_LocalPosition: {x: -1.51, y: -2.7920752, z: -42.5}
+  m_LocalScale: {x: 1.3656201, y: 1.3656201, z: 1.3656201}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 813782103}
@@ -5539,7 +5539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
   anchorType: 1
-  anchorOffset: {x: -2.15, y: 4.13, z: 107.5}
+  anchorOffset: {x: -1.51, y: 5.46, z: 107.5}
 --- !u!4 &1331654941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3909742053706545196, guid: f4c3915337f3d4ea9acac2031e96fcdf, type: 3}
@@ -14038,8 +14038,8 @@ Transform:
   m_GameObject: {fileID: 2082810449}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.03, y: -2.48, z: -50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.9, y: -3.6, z: -50}
+  m_LocalScale: {x: 1.3513703, y: 1.3513703, z: 1.3513703}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1082719434}
