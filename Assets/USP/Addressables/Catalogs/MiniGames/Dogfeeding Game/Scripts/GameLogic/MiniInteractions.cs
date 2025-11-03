@@ -19,6 +19,14 @@ namespace USP.Minigame.DF_Game
 
         [SerializeField] private Animator boneanimator;
         [SerializeField] private ClikcableObject bone;
+        
+        [SerializeField] private List<SpriteRenderer> bulbs;
+        [SerializeField] private List<ClikcableObject> bulbbuttons;
+        [SerializeField] private Sprite bulboff;
+        [SerializeField] private Sprite shine;
+        private bool isBulboff = true;
+        
+        
 
         public void DisableDraggableAnchors()
         {
@@ -42,6 +50,7 @@ namespace USP.Minigame.DF_Game
             tree.OnClick += Onclikcedtree;
             postbox.OnClick += OnclickedPostbox;
             bone.OnClick += OnclickedBone;
+            bulbbuttons.ForEach(x=>x.OnClick+=OnclickBulb);
         }
 
         public void PlayWaterParticles()
@@ -70,6 +79,26 @@ namespace USP.Minigame.DF_Game
         public void OnclickedBone()
         {
             boneanimator.SetTrigger("open");
+        }
+
+        public void OnclickBulb()
+        {
+            if (isBulboff)
+            {
+                isBulboff = false;
+                foreach (var bulb in bulbs)
+                {
+                    bulb.sprite = shine;
+                }
+            }
+            else
+            {
+                isBulboff = true;
+                foreach (var bulb in bulbs)
+                {
+                    bulb.sprite = bulboff;
+                }
+            }
         }
     }
 }
