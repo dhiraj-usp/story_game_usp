@@ -501,7 +501,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 75379771}
-  - {fileID: 111303073}
   - {fileID: 1585855756}
   - {fileID: 1707328869}
   m_Father: {fileID: 1477744764}
@@ -813,13 +812,16 @@ GameObject:
   - component: {fileID: 111303073}
   - component: {fileID: 111303075}
   - component: {fileID: 111303074}
+  - component: {fileID: 111303076}
+  - component: {fileID: 111303078}
+  - component: {fileID: 111303077}
   m_Layer: 0
-  m_Name: Door open
+  m_Name: bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &111303073
 Transform:
   m_ObjectHideFlags: 0
@@ -829,11 +831,11 @@ Transform:
   m_GameObject: {fileID: 111303072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3543232, y: -0.32653296, z: 1.4589763}
-  m_LocalScale: {x: 0.5359533, y: 0.5359533, z: 0.5359533}
+  m_LocalPosition: {x: -5.43, y: 1.36, z: -100}
+  m_LocalScale: {x: 0.56687915, y: 0.56687915, z: 0.56687915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 83465236}
+  m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &111303074
 MonoBehaviour:
@@ -848,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
   anchorType: 3
-  anchorOffset: {x: 5.57, y: -2.11, z: 97}
+  anchorOffset: {x: 5.57, y: 1.36, z: 0}
 --- !u!212 &111303075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -896,7 +898,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5423214993996486913, guid: 20308bac5ae1b47c6805daa9b10cdea9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c60ccd7009c6d4696971cc70c21f2e19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -907,6 +909,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &111303076
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111303072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d740b13e8993a457888b6f1c9f2defd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &111303077
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111303072}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
+--- !u!114 &111303078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111303072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.ClikcableObject
 --- !u!1 &129101037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1906458940462128700, guid: fac61cf1f04c24a9f98ad28d7efa8026, type: 3}
@@ -6597,6 +6679,7 @@ Transform:
   - {fileID: 378428311}
   - {fileID: 2031192418}
   - {fileID: 338812856}
+  - {fileID: 111303073}
   - {fileID: 83465236}
   - {fileID: 1882097005}
   - {fileID: 2027232196}
@@ -7273,6 +7356,10 @@ MonoBehaviour:
   treeParticles: {fileID: 2207874709931381730}
   cameraAnchors:
   - {fileID: 1112552735}
+  postboxanimator: {fileID: 2138514317}
+  postbox: {fileID: 2138514316}
+  boneanimator: {fileID: 111303076}
+  bone: {fileID: 111303078}
 --- !u!1 &1612079205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7443054865241060158, guid: 74667615114104b81b8f06f8a8f4102e, type: 3}
@@ -13001,8 +13088,8 @@ Transform:
   m_GameObject: {fileID: 1857970656}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41220474, y: 9.961624, z: -1.545772}
-  m_LocalScale: {x: 1.0972, y: 1.0972, z: 1.0972}
+  m_LocalPosition: {x: -0.41675165, y: -2.2712984, z: 97.415794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138514312}
@@ -13020,7 +13107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
   anchorType: 2
-  anchorOffset: {x: -0.96, y: 6.01, z: 92.1}
+  anchorOffset: {x: -2.82, y: 3.88, z: 93.5}
 --- !u!212 &1857970659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13068,7 +13155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 922bf138729024ac7850a081c30d910c, type: 3}
+  m_Sprite: {fileID: -5798618092728727711, guid: 6761ac01572ef417493fd1b0a50a9700, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14566,6 +14653,9 @@ GameObject:
   - component: {fileID: 2138514312}
   - component: {fileID: 2138514314}
   - component: {fileID: 2138514313}
+  - component: {fileID: 2138514316}
+  - component: {fileID: 2138514315}
+  - component: {fileID: 2138514317}
   m_Layer: 0
   m_Name: mailbox
   m_TagString: Untagged
@@ -14582,8 +14672,8 @@ Transform:
   m_GameObject: {fileID: 2138514311}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.28, y: -8.042075, z: -7}
-  m_LocalScale: {x: 0.5822343, y: 0.5822343, z: 0.5822343}
+  m_LocalPosition: {x: 8.58, y: -2.1920753, z: -100}
+  m_LocalScale: {x: 0.9598032, y: 0.9598032, z: 0.9598032}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1857970657}
@@ -14602,7 +14692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
   anchorType: 2
-  anchorOffset: {x: -0.72, y: 0.21, z: 93}
+  anchorOffset: {x: -2.42, y: 6.06, z: 0}
 --- !u!212 &2138514314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14650,17 +14740,97 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 205e58a42cfbb4b2993b831b4b87bdcd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c3b75f1a1d10473da5983c1df337499, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 7.2031255}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2138514315
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138514311}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.29064238, y: 0.6545024}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.771285, y: 4.069005}
+  m_EdgeRadius: 0
+--- !u!114 &2138514316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138514311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.ClikcableObject
+--- !u!95 &2138514317
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138514311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7a054d64baf146d6b1cde84be9a1f04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1355459040163948898
 PrefabInstance:
   m_ObjectHideFlags: 0
