@@ -10,6 +10,7 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private SpeechBubbleImage dogspeechbubble;
         [SerializeField] private SpeechBubbleImage feedingspeechbubble;
         [SerializeField] private SpeechBubbleImage bathspeechbubble;
+        [SerializeField] private SpeechBubbleImage dogfinalspeechbubble;
 
         [Header("Particles")]
         [SerializeField] private ParticleSystem doorknockparticle;
@@ -44,6 +45,7 @@ namespace USP.Minigame.DF_Game
         {
             feedingstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding));
             bathstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath));
+            CheckForGameEnd();
         }
 
         private void OnDisable()
@@ -82,7 +84,7 @@ namespace USP.Minigame.DF_Game
             dogspeechbubble.gameObject.SetActive(false);
             feedingspeechbubble.gameObject.SetActive(false);
             bathspeechbubble.gameObject.SetActive(false);
-
+            dogfinalspeechbubble.gameObject.SetActive(false);
             bathsbutton.gameObject.SetActive(false);
             feedbutton.gameObject.SetActive(false);
         }
@@ -234,6 +236,74 @@ namespace USP.Minigame.DF_Game
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Bath);
             Debug.Log("Transition to Bath mini-game...");
         }
+        
+        /// <summary>
+        /// Checks if both mini-games are completed, then triggers the game ending sequence.
+        /// </summary>
+        public void CheckForGameEnd()
+        {
+            bool feedingDone = gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding);
+            bool bathDone = gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath);
+            if (feedingDone || bathDone)
+            {
+                dogAnimator.SetTrigger("DogOutidle");
+            }
+            if (feedingDone && bathDone)
+            {
+                Debug.Log("All mini-games completed. Triggering game ending sequence...");
+                StartCoroutine(GameEndSequence());
+            }
+        }
+
+        
+        /// <summary>
+        /// Plays the ending dialogue and animations (dog says bye, girl says bye, both go back in).
+        /// </summary>
+        private IEnumerator GameEndSequence()
+        {
+            CloseAllUI();
+
+            yield return new WaitForSeconds(5f);
+
+            // Dog says “Bye!”
+            dogfinalspeechbubble.gameObject.SetActive(true);
+            dogfinalspeechbubble.ShowBubble(0); // Assume index 2 = "Bye!"
+            yield return new WaitForSeconds(2.2f);
+
+            // Girl says “Bye!”
+            girlspeechbubble.gameObject.SetActive(true);
+            girlspeechbubble.ShowBubble(2); // Assume index 2 = "Bye!"
+            yield return new WaitForSeconds(2.2f);
+
+            // Dog goes back in
+            if (dogAnimator != null)
+                dogAnimator.SetTrigger("DogIn");
+            Debug.Log("Dog going back inside kennel...");
+
+            yield return new WaitForSeconds(2f);
+
+            // Girl also goes back
+            if (girl != null)
+            {
+                // Optional: Animate girl moving out of scene
+               
+                Debug.Log("Girl going back...");
+            }
+
+            yield return new WaitForSeconds(3f);
+
+            // Close bubbles
+            girlspeechbubble.gameObject.SetActive(false);
+            dogspeechbubble.gameObject.SetActive(false);
+
+            // Optional: Trigger kennel close animation
+            if (kennelAnimator != null)
+                kennelAnimator.SetTrigger("Close");
+
+            Debug.Log("Game Ended! All characters back inside.");
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameEnd);
+        }
+
     }
 }
 
