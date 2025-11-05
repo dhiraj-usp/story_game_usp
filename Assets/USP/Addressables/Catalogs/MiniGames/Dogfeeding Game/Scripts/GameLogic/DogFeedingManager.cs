@@ -8,7 +8,7 @@ namespace USP.Minigame.DF_Game
     public class DogFeedingManager : MonoBehaviour
     {
         [SerializeField] private DF_GameManager gameManager; 
-
+        [SerializeField] private SoundManager soundManager;
         [Header("Dog Feeding")] [SerializeField]
         private DraggableTiltableObject2D FoodBox;
 

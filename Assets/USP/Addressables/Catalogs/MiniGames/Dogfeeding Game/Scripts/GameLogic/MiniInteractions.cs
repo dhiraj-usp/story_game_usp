@@ -6,6 +6,7 @@ namespace USP.Minigame.DF_Game
 {
     public class MiniInteractions : MonoBehaviour
     {
+        [SerializeField] private SoundManager soundManager;
         [SerializeField] private DraggableTiltableObject2D waterpot;
         [SerializeField] private ParticleSystem waterParticles;
         [SerializeField] private ClikcableObject foodbowl;

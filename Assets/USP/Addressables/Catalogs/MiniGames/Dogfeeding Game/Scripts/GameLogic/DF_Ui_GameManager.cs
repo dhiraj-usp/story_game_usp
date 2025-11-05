@@ -5,6 +5,8 @@ namespace USP.Minigame.DF_Game
 {
     public class DF_Ui_GameManager : MonoBehaviour
     {
+        [SerializeField] private SoundManager soundManager;
+        
         [Header("Speech Bubbles")]
         [SerializeField] private SpeechBubbleImage girlspeechbubble;
         [SerializeField] private SpeechBubbleImage dogspeechbubble;

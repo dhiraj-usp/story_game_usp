@@ -4389,6 +4389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3fabfc0878b845c3a25d6c52c6a7a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.DF_Ui_GameManager
+  soundManager: {fileID: 403081275}
   girlspeechbubble: {fileID: 408538005}
   dogspeechbubble: {fileID: 515666641}
   feedingspeechbubble: {fileID: 1405739362}
@@ -5269,6 +5270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.DogFeedingManager
   gameManager: {fileID: 2046125382}
+  soundManager: {fileID: 403081275}
   FoodBox: {fileID: 949836488}
   FeedingBowl: {fileID: 891558620}
   SnackParent: {fileID: 1862138470}
@@ -7742,6 +7744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.DogBathManager
   dog: {fileID: 1249581019}
+  soundManager: {fileID: 403081275}
   bubbles:
   - {fileID: 1932045233}
   - {fileID: 1612079205}
@@ -8234,6 +8237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01daeb69704a447aac2749b1dab7585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.MiniInteractions
+  soundManager: {fileID: 403081275}
   waterpot: {fileID: 1112552733}
   waterParticles: {fileID: 872192631}
   foodbowl: {fileID: 2081547654}

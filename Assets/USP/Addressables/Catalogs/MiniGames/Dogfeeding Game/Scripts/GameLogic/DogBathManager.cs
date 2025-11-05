@@ -9,6 +9,8 @@ namespace USP.Minigame.DF_Game
         [Header("Dog Settings")]
         [SerializeField] private Animator dog;
          // cleaner versions in order
+         
+         [SerializeField] private SoundManager soundManager;
 
         [Header("Bubbles")]
         [SerializeField] private List<GameObject> bubbles; // use BathBubble, not GameObject
