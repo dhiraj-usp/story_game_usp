@@ -7517,8 +7517,8 @@ Transform:
   m_GameObject: {fileID: 1585855755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34737554, y: -0.46548328, z: -5.627483}
-  m_LocalScale: {x: 0.48319206, y: 0.46203098, z: 0.46203098}
+  m_LocalPosition: {x: -0.40295592, y: -0.46548328, z: -5.627483}
+  m_LocalScale: {x: 0.64878273, y: 0.63181055, z: 0.5355401}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 83465236}
@@ -7570,7 +7570,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5213229242370633579, guid: 2517fd4ee99a242e09155fa30d13679f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3fa32c3ea5244e67b23526b2c882f1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7594,7 +7594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
   anchorType: 3
-  anchorOffset: {x: 6.03, y: -3.15, z: 86.8}
+  anchorOffset: {x: 4.95, y: -3.15, z: 86.8}
 --- !u!114 &1585855759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7645,7 +7645,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.92, y: 5.56}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
