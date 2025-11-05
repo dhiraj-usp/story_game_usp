@@ -17,8 +17,7 @@ namespace USP.Minigame.DF_Game
 
         [Header("Clickable Objects")]
         [SerializeField] private ClikcableObject door;
-        [SerializeField] private ClikcableObject bathsbutton;
-        [SerializeField] private ClikcableObject feedbutton;
+       
 
         [Header("Characters")]
         [SerializeField] private Transform girl;
@@ -53,14 +52,14 @@ namespace USP.Minigame.DF_Game
 
         private void OnDisable()
         {
-            if(door==null || bathsbutton==null|| feedbutton==null)
+            if(door==null)
                 return;
             if(door.OnClick != null)
                 door.OnClick -= OnKennelClicked;
-            if(bathsbutton.OnClick != null)
-                bathsbutton.OnClick -= OnBathSelected;
-            if(feedbutton.OnClick != null)
-                feedbutton.OnClick -= OnFeedingSelected;
+            if(bathspeechbubble != null)
+                bathspeechbubble.DisableClick();
+            if(feedingspeechbubble!= null)
+                feedingspeechbubble.DisableClick();
         }
 
         /// <summary>
@@ -73,8 +72,8 @@ namespace USP.Minigame.DF_Game
             
             Debug.Log("Game initialized. Waiting for kennel click...");
             door.OnClick += OnKennelClicked;
-            bathsbutton.OnClick += OnBathSelected;
-            feedbutton.OnClick += OnFeedingSelected;
+            bathspeechbubble.EnableClick(OnBathSelected);
+            feedingspeechbubble.EnableClick(OnFeedingSelected);
             CloseAllUI();
         }
 
@@ -88,8 +87,7 @@ namespace USP.Minigame.DF_Game
             feedingspeechbubble.gameObject.SetActive(false);
             bathspeechbubble.gameObject.SetActive(false);
             dogfinalspeechbubble.gameObject.SetActive(false);
-            bathsbutton.gameObject.SetActive(false);
-            feedbutton.gameObject.SetActive(false);
+           
         }
 
         /// <summary>
@@ -207,8 +205,7 @@ namespace USP.Minigame.DF_Game
         {
             Debug.Log("Showing dog options (Feeding / Bath).");
 
-            bathsbutton.gameObject.SetActive(true);
-            feedbutton.gameObject.SetActive(true);
+    
 
             bathspeechbubble.gameObject.SetActive(true);
             feedingspeechbubble.gameObject.SetActive(true);
@@ -223,7 +220,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnFeedingSelected()
         {
-            feedbutton.OnClick -= OnFeedingSelected;
+            feedingspeechbubble.DisableClick();
             Debug.Log("Feeding sequence selected.");
             GoToFeedingSequence();
         }
@@ -233,7 +230,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnBathSelected()
         {
-            bathsbutton.OnClick -= OnBathSelected;
+            bathspeechbubble.DisableClick();
             Debug.Log("Bath sequence selected.");
             GoToBathSequence();
         }

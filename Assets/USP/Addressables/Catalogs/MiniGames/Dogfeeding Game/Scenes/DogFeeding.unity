@@ -1104,7 +1104,7 @@ Transform:
   m_GameObject: {fileID: 170514460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3822324, y: 1.7204382, z: 0}
+  m_LocalPosition: {x: 1.3822318, y: 1.7204384, z: 0}
   m_LocalScale: {x: 0.83410746, y: 0.83410746, z: 0.83410746}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1573,7 +1573,6 @@ GameObject:
   - component: {fileID: 287047166}
   - component: {fileID: 287047165}
   - component: {fileID: 287047164}
-  - component: {fileID: 287047168}
   - component: {fileID: 287047169}
   m_Layer: 0
   m_Name: BathButton
@@ -1689,18 +1688,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &287047168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287047162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClikcableObject
 --- !u!58 &287047169
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4042,13 +4029,11 @@ MonoBehaviour:
   dogfinalspeechbubble: {fileID: 1665616780}
   doorknockparticle: {fileID: 1707328870}
   door: {fileID: 1585855759}
-  bathsbutton: {fileID: 287047168}
-  feedbutton: {fileID: 1405739366}
   girl: {fileID: 796067466}
   dog: {fileID: 654299607}
   kennelAnimator: {fileID: 0}
   dogAnimator: {fileID: 83465237}
-  girlAnimator: {fileID: 0}
+  girlAnimator: {fileID: 1661701364}
   gameManager: {fileID: 2046125382}
   feedingstatus: {fileID: 1176340655}
   bathstatus: {fileID: 1470642731}
@@ -6568,7 +6553,6 @@ GameObject:
   - component: {fileID: 1405739363}
   - component: {fileID: 1405739362}
   - component: {fileID: 1405739365}
-  - component: {fileID: 1405739366}
   m_Layer: 0
   m_Name: FeedButton
   m_TagString: Untagged
@@ -6718,18 +6702,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 2.3152452, y: 0.165375}
   m_Radius: 2.56
---- !u!114 &1405739366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405739360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClikcableObject
 --- !u!1 &1406903212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7443054865241060158, guid: 74667615114104b81b8f06f8a8f4102e, type: 3}
@@ -7993,6 +7965,7 @@ GameObject:
   - component: {fileID: 1665616782}
   - component: {fileID: 1665616781}
   - component: {fileID: 1665616780}
+  - component: {fileID: 1665616783}
   m_Layer: 0
   m_Name: Bye speech bubbble
   m_TagString: Untagged
@@ -8105,6 +8078,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1665616783
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665616778}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2.7750003
 --- !u!1001 &1675627679
 PrefabInstance:
   m_ObjectHideFlags: 0
