@@ -25,11 +25,14 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private Transform dog;
         [SerializeField] private Animator kennelAnimator;
         [SerializeField] private Animator dogAnimator;
+        [SerializeField] private Animator girlAnimator;
         
         [SerializeField] private DF_GameManager gameManager;
 
         [SerializeField] private GameObject feedingstatus;
         [SerializeField] private GameObject bathstatus;
+
+        private bool DogspeechComplete;
         
         private void Start()
         {
@@ -148,19 +151,31 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private IEnumerator DialogueSequence()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.5f);
 
             ShowGirlSpeech(0); // “Hi”
             yield return new WaitForSeconds(2.2f);
 
             ShowDogSpeech(0); // “Hi”
-            yield return new WaitForSeconds(2.2f);
+            dogspeechbubble.EnableClick(DogsaysHI);
+            yield return new WaitUntil(() => DogspeechComplete);
+            dogspeechbubble.DisableClick();
+            DogspeechComplete = false;
 
             ShowGirlSpeech(1); // “How are you?”
             yield return new WaitForSeconds(2.2f);
 
             ShowDogOptions();
         }
+
+        private void DogsaysHI()
+        {
+            DogspeechComplete = true;
+            CloseDogSpeech();
+        }
+        
+        
+        
 
         /// <summary>
         /// Displays a speech bubble for the girl character.
@@ -177,7 +192,12 @@ namespace USP.Minigame.DF_Game
         private void ShowDogSpeech(int bubbleIndex)
         {
             dogspeechbubble.gameObject.SetActive(true);
-            dogspeechbubble.ShowBubble(bubbleIndex);
+            dogspeechbubble.ShowBubble(bubbleIndex,-1f,false);
+        }
+
+        private void CloseDogSpeech()
+        {
+            StartCoroutine(dogspeechbubble.PopOutBubble());
         }
 
         /// <summary>
@@ -268,13 +288,17 @@ namespace USP.Minigame.DF_Game
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
             dogfinalspeechbubble.ShowBubble(0); // Assume index 2 = "Bye!"
-            yield return new WaitForSeconds(2.2f);
+            dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
+            yield return new WaitUntil(() => DogspeechComplete);
+            dogfinalspeechbubble.DisableClick();
+            DogspeechComplete = false;
 
             // Girl says “Bye!”
             girlspeechbubble.gameObject.SetActive(true);
             girlspeechbubble.ShowBubble(2); // Assume index 2 = "Bye!"
             yield return new WaitForSeconds(2.2f);
-
+            girlspeechbubble.gameObject.SetActive(false);
+            dogspeechbubble.gameObject.SetActive(false);
             // Dog goes back in
             if (dogAnimator != null)
                 dogAnimator.SetTrigger("DogIn");
@@ -286,15 +310,13 @@ namespace USP.Minigame.DF_Game
             if (girl != null)
             {
                 // Optional: Animate girl moving out of scene
-               
+                girlAnimator.SetTrigger("Go in");
                 Debug.Log("Girl going back...");
             }
 
             yield return new WaitForSeconds(3f);
 
-            // Close bubbles
-            girlspeechbubble.gameObject.SetActive(false);
-            dogspeechbubble.gameObject.SetActive(false);
+            
 
             // Optional: Trigger kennel close animation
             if (kennelAnimator != null)
@@ -302,6 +324,12 @@ namespace USP.Minigame.DF_Game
 
             Debug.Log("Game Ended! All characters back inside.");
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameEnd);
+        }
+
+        private void DogfinalSpeechcomplete()
+        {
+            DogspeechComplete = true;
+            StartCoroutine(dogfinalspeechbubble.PopOutBubble());
         }
 
     }

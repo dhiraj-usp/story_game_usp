@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
 namespace USP.Minigame.DF_Game
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class SpeechBubbleImage : MonoBehaviour
+    public class SpeechBubbleImage : MonoBehaviour,IClickable
     {
         [Header("Bubble Sprites")] [SerializeField]
         private Sprite[] bubbleSprites; // Assign all your bubble images here
@@ -18,6 +19,7 @@ namespace USP.Minigame.DF_Game
         private Transform target;
         private Coroutine activeRoutine;
         private Vector3 originalScale;
+        private Action Onclickcallback;
 
         private void Awake()
         {
@@ -86,6 +88,35 @@ namespace USP.Minigame.DF_Game
             }
 
             bubbleRenderer.enabled = false;
+        }
+
+        public IEnumerator PopOutBubble()
+        {
+            // Pop out back to zero
+            float t = 0f;
+            while (t < 0.2f)
+            {
+                t += Time.deltaTime;
+                transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t / 0.2f);
+                yield return null;
+            }
+
+            bubbleRenderer.enabled = false;
+        }
+
+        public void EnableClick(Action callback)
+        {
+            Onclickcallback = callback;
+        }
+
+        public void DisableClick()
+        {
+            Onclickcallback = null;
+        }
+
+        public void OnClicked()
+        {
+            Onclickcallback?.Invoke();
         }
     }
 }
