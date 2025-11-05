@@ -14,9 +14,11 @@ namespace USP.Minigame.DF_Game
 
         [Header("Particles")]
         [SerializeField] private ParticleSystem doorknockparticle;
+        [SerializeField] private ParticleSystem restartdoorknockparticle;
 
         [Header("Clickable Objects")]
         [SerializeField] private ClikcableObject door;
+        [SerializeField] private ClikcableObject restartdoor;
        
 
         [Header("Characters")]
@@ -30,6 +32,7 @@ namespace USP.Minigame.DF_Game
 
         [SerializeField] private GameObject feedingstatus;
         [SerializeField] private GameObject bathstatus;
+        [SerializeField] private GameObject doorknockstatus;
 
         private bool DogspeechComplete;
         
@@ -47,6 +50,11 @@ namespace USP.Minigame.DF_Game
         {
             feedingstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding));
             bathstatus.SetActive(gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath));
+            
+            if(gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding)||
+               gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath))
+                ChangeAnimationstate();
+            
             CheckForGameEnd();
         }
 
@@ -72,9 +80,26 @@ namespace USP.Minigame.DF_Game
             
             Debug.Log("Game initialized. Waiting for kennel click...");
             door.OnClick += OnKennelClicked;
+            
             bathspeechbubble.EnableClick(OnBathSelected);
             feedingspeechbubble.EnableClick(OnFeedingSelected);
             CloseAllUI();
+            
+        }
+
+        public void ChangeAnimationstate()
+        {
+            girlAnimator.SetBool("gamestart",true);
+        }
+
+
+        [ContextMenu("restart game")]
+        public void RestartGame()
+        {
+            restartdoorknockparticle.Play();
+            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
+            girlAnimator.SetBool("gamestart",false);
+            //restartgame
         }
 
         /// <summary>
@@ -284,7 +309,7 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
-            dogfinalspeechbubble.ShowBubble(0); // Assume index 2 = "Bye!"
+            dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
             yield return new WaitUntil(() => DogspeechComplete);
             dogfinalspeechbubble.DisableClick();
@@ -312,7 +337,8 @@ namespace USP.Minigame.DF_Game
             }
 
             yield return new WaitForSeconds(3f);
-
+            restartdoor.gameObject.SetActive(true);
+            restartdoor.OnClick += RestartGame;
             
 
             // Optional: Trigger kennel close animation
