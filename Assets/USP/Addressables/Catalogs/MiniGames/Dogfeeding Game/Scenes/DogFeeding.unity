@@ -2350,7 +2350,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.SoundManager
   sfxSource: {fileID: 403081274}
   sfxSourcelooping: {fileID: 460949633}
-  soundClips: []
+  soundClips:
+  - {fileID: 8300000, guid: 896a72a5d98bd45ffa9b6d2ac6be9d6c, type: 3}
+  - {fileID: 8300000, guid: 475c6f4e8b97f47cb8dcda8d7a2023d1, type: 3}
+  - {fileID: 8300000, guid: 810fce1128ed546c5b3821f45612ff78, type: 3}
+  - {fileID: 8300000, guid: ff7e3382142614ceda90a0001d919675, type: 3}
+  - {fileID: 8300000, guid: e8050e3aeb0ce40c296f3a8c14976149, type: 3}
 --- !u!1 &405553479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7443054865241060158, guid: 74667615114104b81b8f06f8a8f4102e, type: 3}
@@ -4401,7 +4406,7 @@ MonoBehaviour:
   gameManager: {fileID: 2046125382}
   feedingstatus: {fileID: 1176340655}
   bathstatus: {fileID: 1470642731}
-  doorknockstatus: {fileID: 0}
+  doorknockstatus: {fileID: 1292735627}
 --- !u!1 &898524064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1906458940462128700, guid: fac61cf1f04c24a9f98ad28d7efa8026, type: 3}
