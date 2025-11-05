@@ -177,10 +177,10 @@ namespace USP.Minigame.DF_Game
         private IEnumerator DialogueSequence()
         {
             yield return new WaitForSeconds(2.5f);
-
+            soundManager.PlaySFX("Hi");
             ShowGirlSpeech(0); // “Hi”
             yield return new WaitForSeconds(2.2f);
-
+            soundManager.PlaySFX("Hello");
             ShowDogSpeech(0); // “Hi”
             dogspeechbubble.EnableClick(DogsaysHI);
             yield return new WaitUntil(() => DogspeechComplete);
@@ -188,8 +188,9 @@ namespace USP.Minigame.DF_Game
             DogspeechComplete = false;
 
             ShowGirlSpeech(1); // “How are you?”
+            soundManager.PlaySFX("HRU");
             yield return new WaitForSeconds(2.2f);
-
+            soundManager.PlaySFX("Woof");
             ShowDogOptions();
         }
 
@@ -311,6 +312,7 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
+            soundManager.PlaySFX("Bye");
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
             yield return new WaitUntil(() => DogspeechComplete);
@@ -319,6 +321,7 @@ namespace USP.Minigame.DF_Game
 
             // Girl says “Bye!”
             girlspeechbubble.gameObject.SetActive(true);
+            soundManager.PlaySFX("Bye");
             girlspeechbubble.ShowBubble(2); // Assume index 2 = "Bye!"
             yield return new WaitForSeconds(2.2f);
             girlspeechbubble.gameObject.SetActive(false);
