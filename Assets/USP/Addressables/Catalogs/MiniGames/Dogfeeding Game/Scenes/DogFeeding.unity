@@ -2383,6 +2383,7 @@ GameObject:
   - component: {fileID: 408538004}
   - component: {fileID: 408538003}
   - component: {fileID: 408538005}
+  - component: {fileID: 408538006}
   m_Layer: 0
   m_Name: GIRL1_HI_0
   m_TagString: Untagged
@@ -2497,6 +2498,42 @@ MonoBehaviour:
   offset: {x: 0, y: 2, z: 0}
   faceCamera: 1
   gamecamera: {fileID: 371825847}
+--- !u!58 &408538006
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408538001}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 2.3403566, y: 0.55106586}
+  m_Radius: 2.5877655
 --- !u!1 &417907878
 GameObject:
   m_ObjectHideFlags: 0

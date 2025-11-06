@@ -185,17 +185,22 @@ namespace USP.Minigame.DF_Game
         {
             yield return new WaitForSeconds(2.5f);
             soundManager.PlaySFX("Hi");
+            girlspeechbubble.EnableClick(PlayGirlAudioHi);
             ShowGirlSpeech(0); // “Hi”
             yield return new WaitForSeconds(2.2f);
-            soundManager.PlaySFX("Hello");
+            
+          
             ShowDogSpeech(0); // “Hi”
             dogspeechbubble.EnableClick(DogsaysHI);
             yield return new WaitUntil(() => DogspeechComplete);
+            soundManager.PlaySFX("Hello");
+            CloseGirlSpeech();
             dogspeechbubble.DisableClick();
             DogspeechComplete = false;
 
             ShowGirlSpeech(1); // “How are you?”
             soundManager.PlaySFX("HRU");
+            girlspeechbubble.EnableClick(PlayGirlAudioHRU);
             yield return new WaitForSeconds(2.2f);
             soundManager.PlaySFX("Woof");
             ShowDogOptions();
@@ -216,7 +221,7 @@ namespace USP.Minigame.DF_Game
         private void ShowGirlSpeech(int bubbleIndex)
         {
             girlspeechbubble.gameObject.SetActive(true);
-            girlspeechbubble.ShowBubble(bubbleIndex);
+            girlspeechbubble.ShowBubble(bubbleIndex,-1f,false);
         }
 
         /// <summary>
@@ -231,6 +236,11 @@ namespace USP.Minigame.DF_Game
         private void CloseDogSpeech()
         {
             StartCoroutine(dogspeechbubble.PopOutBubble());
+        }
+
+        private void CloseGirlSpeech()
+        {
+            StartCoroutine(girlspeechbubble.PopOutBubble());
         }
 
         /// <summary>
@@ -265,6 +275,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         public void OnBathSelected()
         {
+            CloseGirlSpeech();
             bathspeechbubble.DisableClick();
             Debug.Log("Bath sequence selected.");
             GoToBathSequence();
@@ -275,6 +286,7 @@ namespace USP.Minigame.DF_Game
         /// </summary>
         private void GoToFeedingSequence()
         {
+            CloseGirlSpeech();
             // You can transition scene or activate feeding phase here
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Feeding);
             Debug.Log("Transition to Feeding mini-game...");
@@ -319,10 +331,11 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
-            soundManager.PlaySFX("Bye");
+           
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
             yield return new WaitUntil(() => DogspeechComplete);
+            soundManager.PlaySFX("Bye");
             dogfinalspeechbubble.DisableClick();
             DogspeechComplete = false;
 
@@ -367,7 +380,15 @@ namespace USP.Minigame.DF_Game
             DogspeechComplete = true;
             StartCoroutine(dogfinalspeechbubble.PopOutBubble());
         }
-        
+        public void PlayGirlAudioHi()
+        {
+            soundManager.PlaySFX("Hi");
+        }
+
+        public void PlayGirlAudioHRU()
+        {
+            soundManager.PlaySFX("HRU");
+        }
        
 
 

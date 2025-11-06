@@ -126,5 +126,9 @@ namespace USP.Minigame.DF_Game
                 animator.Play(nextState, 0, 0f);
             }
         }
+
+       
+        
+        
     }
 }
