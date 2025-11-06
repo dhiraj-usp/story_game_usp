@@ -67,23 +67,28 @@ namespace USP.Minigame.DF_Game
         public void OnclikcedFoodBowl()
         {
             shineParticles.Play();
+            soundManager.PlaySFX("shine");
         }
         public void Onclikcedtree()
         {
             treeParticles.Play();
+            soundManager.PlaySFX("leaf");
         }
 
         public void OnclickedPostbox()
         {
             postboxanimator.SetTrigger("open");
+            soundManager.PlaySFX("mail");
         }
         public void OnclickedBone()
         {
             boneanimator.SetTrigger("open");
+            soundManager.PlaySFX("squeak");
         }
 
         public void OnclickBulb()
         {
+            soundManager.PlaySFX("LightON");
             if (isBulboff)
             {
                 isBulboff = false;
@@ -91,6 +96,7 @@ namespace USP.Minigame.DF_Game
                 {
                     bulb.sprite = shine;
                 }
+               
             }
             else
             {

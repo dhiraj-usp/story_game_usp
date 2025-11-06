@@ -101,8 +101,13 @@ namespace USP.Minigame.DF_Game
         public void RestartGame()
         {
             restartdoorknockparticle.Play();
+            restartdoor.gameObject.SetActive(false);
+            gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Bath,false);
+            gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Feeding,false);
+            dogAnimator.SetBool("gamestart",false);
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
-            girlAnimator.SetBool("gamestart",false);
+            door.OnClick += OnKennelClicked;
+            InitializeGame();
             //restartgame
         }
 
@@ -354,7 +359,7 @@ namespace USP.Minigame.DF_Game
                 kennelAnimator.SetTrigger("Close");
 
             Debug.Log("Game Ended! All characters back inside.");
-            gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameEnd);
+            //gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameEnd);
         }
 
         private void DogfinalSpeechcomplete()
@@ -362,6 +367,9 @@ namespace USP.Minigame.DF_Game
             DogspeechComplete = true;
             StartCoroutine(dogfinalspeechbubble.PopOutBubble());
         }
+        
+       
+
 
     }
 }

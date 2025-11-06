@@ -23,6 +23,10 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private int nextSpriteThreshold = 5; // change sprite every 5 pops
         [SerializeField] private int completedthreshold = 25;
         
+        [SerializeField] private Animator animator;
+        [SerializeField] private string[] stateNames; // e.g. "Stage1", "Stage2", "Stage3", etc.
+
+        private int currentIndex = 0;
         
 
         private void Start()
@@ -53,14 +57,16 @@ namespace USP.Minigame.DF_Game
         {
             bathBubble.PopBubble();
             poppedCount++;
-
+            
             // Play pop sound (if any)
+            soundManager.PlaySFX("bubblepop");
             // SoundManager.Instance?.PlaySFX("BubblePop");
 
             // Check if it’s time to update dog sprite
             if (poppedCount >= nextSpriteThreshold)
             {
                 UpdateDogSprite();// next milestone
+                soundManager.PlaySFX("Woof");
                 nextSpriteThreshold += 5;
             }
 
@@ -76,22 +82,43 @@ namespace USP.Minigame.DF_Game
             UpdateDogSprite();
             yield return new WaitForSeconds(0.5f);
             shineparticle.Play();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(10f);
             OnBathComplete();
         }
 
         private void UpdateDogSprite()
         {
-            dog.SetTrigger("Nextstage");
+            //dog.SetTrigger("Nextstage");
+            PlayNextStage();
         }
 
         private void OnBathComplete()
         {
             Debug.Log("Bathing complete! 🎉 Dog is fully clean!");
-            
+            soundManager.PlaySFX("shine");
             // Optionally tell game manager
             gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Bath,true);
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
+        }
+        
+        
+       
+
+        public void PlayNextStage()
+        {
+            if (animator == null || stateNames.Length == 0) return;
+
+            // Get current animation info
+            AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+            float normalizedTime = info.normalizedTime % 1f; // ensures it’s between 0–1
+
+            // Move to next
+            currentIndex = (currentIndex + 1) % stateNames.Length;
+
+            string nextState = stateNames[currentIndex];
+
+            // Blend to the next clip from the same point
+            animator.Play(nextState, 0, normalizedTime);
         }
     }
 }

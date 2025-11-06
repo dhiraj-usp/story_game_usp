@@ -22,6 +22,8 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private List<Sprite> SnackSprites;
         [SerializeField] private float snackSpawnDelay = 0.5f;
 
+        [SerializeField] private BoxShake shakeblebox;
+
         private readonly List<GameObject> spawnedSnacks = new List<GameObject>();
         private int snackIndex = 0;
         private int feedIndex = 0;
@@ -37,7 +39,7 @@ namespace USP.Minigame.DF_Game
         public void StartDogFeeding()
         {
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Feeding);
-
+            FoodBox.enabled=true;
             // reset state
             snackIndex = 0;
             feedIndex = 0;
@@ -89,10 +91,13 @@ namespace USP.Minigame.DF_Game
             FoodBox.enabled = false;
 
             // play particle and animation
-            SnackAnimator.enabled = true;
-            SnackAnimator.SetTrigger("Pour");
+            // SnackAnimator.enabled = true;
+            // SnackAnimator.SetTrigger("Pour");
+            FoodBox.gameObject.SetActive(false);
+            shakeblebox.gameObject.SetActive(true);
+            shakeblebox.Shake();
             SnackParticles.Play();
-
+            soundManager.PlaySFX("ceral");
             StartCoroutine(SnackCycleRoutine());
         }
 
@@ -103,6 +108,7 @@ namespace USP.Minigame.DF_Game
             // spawn one snack
             GameObject snack =
                 Instantiate(SnackPrefab, SnackPoint.position, Quaternion.identity, SnackParent);
+            soundManager.PlaySFX("Fallinbowl");
             if (snackIndex < SnackSprites.Count)
             {
                 var sr = snack.GetComponent<SpriteRenderer>();
@@ -116,7 +122,8 @@ namespace USP.Minigame.DF_Game
             // stop pouring FX
             yield return new WaitForSeconds(0.5f);
             SnackParticles.Stop();
-            SnackAnimator.enabled = false;
+            FoodBox.gameObject.SetActive(true);
+            shakeblebox.gameObject.SetActive(false);
 
             // reset box to origin
             FoodBox.TriggerReturnToOrigin();
@@ -144,6 +151,7 @@ namespace USP.Minigame.DF_Game
 
         private void OnClickOnSnack(Snack snack)
         {
+            soundManager.PlaySFX("Woof");
             if(!isSnackDropComplete)
                 return;
             //play eating audio
@@ -155,6 +163,7 @@ namespace USP.Minigame.DF_Game
             {
                 //Feeding complete
                 ShineParticles.Play();
+                soundManager.PlaySFX("shine");
                 ResetDogFeeding();
                 gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Feeding, true);
                 StartCoroutine(FeedingSequenceCompleted());
