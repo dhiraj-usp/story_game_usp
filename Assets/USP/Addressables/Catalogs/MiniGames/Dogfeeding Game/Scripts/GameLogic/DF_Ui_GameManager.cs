@@ -21,9 +21,10 @@ namespace USP.Minigame.DF_Game
         [Header("Clickable Objects")]
         [SerializeField] private ClikcableObject door;
         [SerializeField] private ClikcableObject restartdoor;
-       
 
-        [Header("Characters")]
+
+        [Header("Characters")] [SerializeField]
+        private Transform doorpoint;
         [SerializeField] private Transform girl;
         [SerializeField] private Transform dog;
         [SerializeField] private Animator kennelAnimator;
@@ -36,6 +37,8 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private GameObject bathstatus;
         [SerializeField] private GameObject doorknockstatus;
         [SerializeField] private GameObject girlcharacter;
+        
+       // [SerializeField] private TutorialPointer TutorialPointer;
 
         private bool DogspeechComplete;
         
@@ -121,7 +124,7 @@ namespace USP.Minigame.DF_Game
             feedingspeechbubble.gameObject.SetActive(false);
             bathspeechbubble.gameObject.SetActive(false);
             dogfinalspeechbubble.gameObject.SetActive(false);
-           
+           // TutorialPointer.ShowTap(doorpoint);
         }
 
         /// <summary>
@@ -192,12 +195,13 @@ namespace USP.Minigame.DF_Game
           
             ShowDogSpeech(0); // “Hi”
             dogspeechbubble.EnableClick(DogsaysHI);
+           // TutorialPointer.ShowTap(dogspeechbubble.gameObject.transform);
             yield return new WaitUntil(() => DogspeechComplete);
             soundManager.PlaySFX("Hello");
             CloseGirlSpeech();
             dogspeechbubble.DisableClick();
             DogspeechComplete = false;
-
+            yield return new WaitForSeconds(1f);
             ShowGirlSpeech(1); // “How are you?”
             soundManager.PlaySFX("HRU");
             girlspeechbubble.EnableClick(PlayGirlAudioHRU);
@@ -258,6 +262,7 @@ namespace USP.Minigame.DF_Game
             // Optional pop animation
             bathspeechbubble.ShowBubble(0,-1f,false);
             feedingspeechbubble.ShowBubble(00,-1f,false);
+          //  TutorialPointer.ShowTap(feedingspeechbubble.gameObject.transform);
         }
 
         /// <summary>
@@ -331,7 +336,7 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
-           
+           // TutorialPointer.ShowTap(dogfinalspeechbubble.gameObject.transform);
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
             yield return new WaitUntil(() => DogspeechComplete);
