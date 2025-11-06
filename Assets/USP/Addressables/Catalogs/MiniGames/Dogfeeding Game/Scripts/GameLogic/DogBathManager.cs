@@ -79,10 +79,10 @@ namespace USP.Minigame.DF_Game
 
         private IEnumerator DogbathComplete()
         {
-            UpdateDogSprite();
+            PlayNextStage(true);
             yield return new WaitForSeconds(0.5f);
             shineparticle.Play();
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(6f);
             OnBathComplete();
         }
 
@@ -104,7 +104,7 @@ namespace USP.Minigame.DF_Game
         
        
 
-        public void PlayNextStage()
+        public void PlayNextStage(bool shouldplayfromstart = false)
         {
             if (animator == null || stateNames.Length == 0) return;
 
@@ -116,9 +116,15 @@ namespace USP.Minigame.DF_Game
             currentIndex = (currentIndex + 1) % stateNames.Length;
 
             string nextState = stateNames[currentIndex];
-
+            
+            
             // Blend to the next clip from the same point
-            animator.Play(nextState, 0, normalizedTime);
+            if(!shouldplayfromstart)
+                animator.Play(nextState, 0, normalizedTime);
+            else
+            {
+                animator.Play(nextState, 0, 0f);
+            }
         }
     }
 }
