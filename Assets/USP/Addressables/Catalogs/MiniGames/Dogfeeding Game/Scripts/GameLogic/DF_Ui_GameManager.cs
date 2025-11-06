@@ -35,6 +35,7 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private GameObject feedingstatus;
         [SerializeField] private GameObject bathstatus;
         [SerializeField] private GameObject doorknockstatus;
+        [SerializeField] private GameObject girlcharacter;
 
         private bool DogspeechComplete;
         
@@ -79,7 +80,7 @@ namespace USP.Minigame.DF_Game
         [ContextMenu("Initialize")]
         public void InitializeGame()
         {
-            
+            girlcharacter.SetActive(false);
             Debug.Log("Game initialized. Waiting for kennel click...");
             door.OnClick += OnKennelClicked;
             
@@ -92,6 +93,7 @@ namespace USP.Minigame.DF_Game
         public void ChangeAnimationstate()
         {
             girlAnimator.SetBool("gamestart",true);
+            girlcharacter.SetActive(true);
         }
 
 
@@ -338,6 +340,7 @@ namespace USP.Minigame.DF_Game
             {
                 // Optional: Animate girl moving out of scene
                 girlAnimator.SetTrigger("Go in");
+                girlcharacter.SetActive(false);
                 Debug.Log("Girl going back...");
             }
 
