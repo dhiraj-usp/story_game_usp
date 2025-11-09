@@ -373,7 +373,6 @@ GameObject:
   m_Component:
   - component: {fileID: 75379771}
   - component: {fileID: 75379773}
-  - component: {fileID: 75379772}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -396,20 +395,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 83465236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &75379772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75379770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.36, y: -3.46, z: 97}
 --- !u!212 &75379773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 83465236}
   - component: {fileID: 83465239}
-  - component: {fileID: 83465238}
   - component: {fileID: 83465237}
   - component: {fileID: 83465241}
   - component: {fileID: 83465240}
@@ -530,20 +514,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &83465238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83465235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.53, y: -2.88, z: 94.9}
 --- !u!212 &83465239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -814,7 +784,6 @@ GameObject:
   m_Component:
   - component: {fileID: 107340342}
   - component: {fileID: 107340343}
-  - component: {fileID: 107340344}
   m_Layer: 0
   m_Name: Brik (1)
   m_TagString: Untagged
@@ -895,20 +864,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &107340344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107340341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 5.85, y: 2.37, z: 160}
 --- !u!4 &109247963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3909742053706545196, guid: f4c3915337f3d4ea9acac2031e96fcdf, type: 3}
@@ -924,7 +879,6 @@ GameObject:
   m_Component:
   - component: {fileID: 111303073}
   - component: {fileID: 111303075}
-  - component: {fileID: 111303074}
   - component: {fileID: 111303076}
   - component: {fileID: 111303078}
   - component: {fileID: 111303077}
@@ -951,20 +905,6 @@ Transform:
   - {fileID: 1257055395}
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &111303074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111303072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.4, y: 0.49, z: 0}
 --- !u!212 &111303075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1200,7 +1140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 170514461}
   - component: {fileID: 170514463}
-  - component: {fileID: 170514462}
   m_Layer: 0
   m_Name: flower
   m_TagString: Untagged
@@ -1223,20 +1162,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1827899784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &170514462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170514460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 0
-  anchorOffset: {x: 0.94, y: 1.17, z: 93}
 --- !u!212 &170514463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1409,7 +1334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 219722755}
   - component: {fileID: 219722756}
-  - component: {fileID: 219722757}
   m_Layer: 0
   m_Name: roof
   m_TagString: Untagged
@@ -1490,20 +1414,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &219722757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219722754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 8
-  anchorOffset: {x: 0, y: -1.07, z: 99}
 --- !u!1 &226116471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1451,96 @@ Transform:
   - {fileID: 1493438214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &245245585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 245245586}
+  - component: {fileID: 245245587}
+  m_Layer: 0
+  m_Name: Grassground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &245245586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245245585}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.5, z: 98}
+  m_LocalScale: {x: 1.7814562, y: 1.0464, z: 0.81438}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1493438214}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &245245587
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245245585}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 50c13cd685a9e43fca03c2fa3f970f97, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &262463362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,6 @@ GameObject:
   m_Component:
   - component: {fileID: 287047163}
   - component: {fileID: 287047166}
-  - component: {fileID: 287047165}
   - component: {fileID: 287047164}
   - component: {fileID: 287047169}
   m_Layer: 0
@@ -1731,20 +1730,6 @@ MonoBehaviour:
   offset: {x: -2.22, y: 2, z: 0}
   faceCamera: 1
   gamecamera: {fileID: 371825847}
---- !u!114 &287047165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287047162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.11, y: -0.19, z: 94.4}
 --- !u!212 &287047166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1944,7 +1929,6 @@ GameObject:
   m_Component:
   - component: {fileID: 338812856}
   - component: {fileID: 338812858}
-  - component: {fileID: 338812857}
   m_Layer: 0
   m_Name: DogHouse
   m_TagString: Untagged
@@ -1967,20 +1951,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &338812857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338812855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.13, y: -0.75, z: 97}
 --- !u!212 &338812858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2052,7 +2022,6 @@ GameObject:
   - component: {fileID: 371825846}
   - component: {fileID: 371825849}
   - component: {fileID: 371825850}
-  - component: {fileID: 371825851}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -2194,22 +2163,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!114 &371825851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371825845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4cfa7ec44994e8aa8b1240c861b2f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.ViewportHandler
-  wireColor: {r: 1, g: 1, b: 1, a: 1}
-  UnitsSize: 22
-  constraint: 0
-  camera: {fileID: 371825847}
 --- !u!1 &378428310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 378428311}
   - component: {fileID: 378428312}
-  - component: {fileID: 378428313}
   m_Layer: 0
   m_Name: Grassground
   m_TagString: Untagged
@@ -2301,20 +2253,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &378428313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378428310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 1
-  anchorOffset: {x: 0, y: 1.75, z: 98}
 --- !u!4 &389877522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4791833480160422225, guid: e61488031050744a981ca02937e9f081, type: 3}
@@ -2497,7 +2435,6 @@ GameObject:
   m_Component:
   - component: {fileID: 408538002}
   - component: {fileID: 408538004}
-  - component: {fileID: 408538003}
   - component: {fileID: 408538005}
   - component: {fileID: 408538006}
   m_Layer: 0
@@ -2522,20 +2459,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 796067466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &408538003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408538001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 4.31, y: 2.03, z: 94.8}
 --- !u!212 &408538004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2660,7 +2583,6 @@ GameObject:
   m_Component:
   - component: {fileID: 417907879}
   - component: {fileID: 417907881}
-  - component: {fileID: 417907880}
   m_Layer: 0
   m_Name: ground 2
   m_TagString: Untagged
@@ -2683,20 +2605,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &417907880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417907878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 2
-  anchorOffset: {x: -0.22, y: 0.14, z: 93}
 --- !u!212 &417907881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3053,7 +2961,6 @@ GameObject:
   m_Component:
   - component: {fileID: 515666638}
   - component: {fileID: 515666640}
-  - component: {fileID: 515666639}
   - component: {fileID: 515666641}
   - component: {fileID: 515666642}
   m_Layer: 0
@@ -3078,20 +2985,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 654299607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &515666639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515666637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.99, y: -2.56, z: 94.4}
 --- !u!212 &515666640
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3417,7 +3310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 654299607}
   - component: {fileID: 654299609}
-  - component: {fileID: 654299608}
   m_Layer: 0
   m_Name: Dog Character
   m_TagString: Untagged
@@ -3441,20 +3333,6 @@ Transform:
   - {fileID: 515666638}
   m_Father: {fileID: 1630135925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &654299608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654299606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.9, y: -4.23, z: 94.4}
 --- !u!212 &654299609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3724,6 +3602,96 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &769325345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769325346}
+  - component: {fileID: 769325347}
+  m_Layer: 0
+  m_Name: ground 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769325346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769325345}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.39, y: -7.22, z: 93}
+  m_LocalScale: {x: 0.74439, y: 0.74439, z: 0.74439}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1493438214}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &769325347
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769325345}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4d24efde40a3c4d9f82c8d62aec5cd37, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 16, y: 7.2031255}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &779910722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3863,7 +3831,6 @@ GameObject:
   m_Component:
   - component: {fileID: 796067466}
   - component: {fileID: 796067467}
-  - component: {fileID: 796067468}
   m_Layer: 0
   m_Name: Girl Character
   m_TagString: Untagged
@@ -3946,20 +3913,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &796067468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796067465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.86, y: 1.1, z: 95.7}
 --- !u!4 &796572663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5679949187617722615, guid: fac61cf1f04c24a9f98ad28d7efa8026, type: 3}
@@ -4052,7 +4005,6 @@ GameObject:
   m_Component:
   - component: {fileID: 799878323}
   - component: {fileID: 799878324}
-  - component: {fileID: 799878325}
   m_Layer: 0
   m_Name: Brik
   m_TagString: Untagged
@@ -4133,20 +4085,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &799878325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799878322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: -4.97, y: 2.37, z: 160}
 --- !u!1 &813782102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4254,7 +4192,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4454,7 +4393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 889943753}
   - component: {fileID: 889943755}
-  - component: {fileID: 889943754}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -4477,20 +4415,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &889943754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889943752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.45, y: -1.71, z: 95.1}
 --- !u!212 &889943755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4721,7 +4645,6 @@ GameObject:
   m_Component:
   - component: {fileID: 911567468}
   - component: {fileID: 911567470}
-  - component: {fileID: 911567469}
   m_Layer: 0
   m_Name: flower (3)
   m_TagString: Untagged
@@ -4744,20 +4667,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1827899784}
   m_LocalEulerAnglesHint: {x: 0, y: -179.937, z: -54.138}
---- !u!114 &911567469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911567467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 2.79, y: -4.8, z: 95.7}
 --- !u!212 &911567470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5191,7 +5100,6 @@ GameObject:
   m_Component:
   - component: {fileID: 964865905}
   - component: {fileID: 964865908}
-  - component: {fileID: 964865907}
   - component: {fileID: 964865906}
   m_Layer: 0
   m_Name: girl eyes
@@ -5237,20 +5145,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &964865907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964865904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.39, y: 2.32, z: 94.8}
 --- !u!212 &964865908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5324,7 +5218,6 @@ GameObject:
   m_Component:
   - component: {fileID: 978053967}
   - component: {fileID: 978053968}
-  - component: {fileID: 978053969}
   m_Layer: 0
   m_Name: GrassBg
   m_TagString: Untagged
@@ -5405,20 +5298,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &978053969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978053966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 0.62, y: 0, z: 100}
 --- !u!1 &981395517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,7 +5308,6 @@ GameObject:
   m_Component:
   - component: {fileID: 981395518}
   - component: {fileID: 981395520}
-  - component: {fileID: 981395519}
   m_Layer: 0
   m_Name: window (1)
   m_TagString: Untagged
@@ -5452,20 +5330,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882097005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &981395519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981395517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 6.24, y: 1.58, z: 97}
 --- !u!212 &981395520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5777,7 +5641,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1112552732}
   - component: {fileID: 1112552736}
-  - component: {fileID: 1112552735}
   - component: {fileID: 1112552734}
   - component: {fileID: 1112552733}
   m_Layer: 0
@@ -5868,20 +5731,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.31, y: 1.48}
   m_EdgeRadius: 0
---- !u!114 &1112552735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112552731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 5
-  anchorOffset: {x: -6.93, y: -4.23, z: 90}
 --- !u!212 &1112552736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6123,7 +5972,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1174887229}
   - component: {fileID: 1174887231}
-  - component: {fileID: 1174887230}
   m_Layer: 0
   m_Name: window (2)
   m_TagString: Untagged
@@ -6146,20 +5994,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882097005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1174887230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174887228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: -1.01, y: 1.58, z: 97}
 --- !u!212 &1174887231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6228,7 +6062,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1176340656}
   - component: {fileID: 1176340658}
-  - component: {fileID: 1176340657}
   m_Layer: 0
   m_Name: Tick
   m_TagString: Untagged
@@ -6251,20 +6084,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1405739361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1176340657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176340655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 10.99, y: -1.85, z: 94.1}
 --- !u!212 &1176340658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6422,7 +6241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1219352256}
   - component: {fileID: 1219352258}
-  - component: {fileID: 1219352257}
   m_Layer: 0
   m_Name: bulbs
   m_TagString: Untagged
@@ -6452,20 +6270,6 @@ Transform:
   - {fileID: 2125942580}
   m_Father: {fileID: 1383384048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1219352257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219352255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 8
-  anchorOffset: {x: -8.48, y: -3.64, z: 89.9}
 --- !u!212 &1219352258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6573,11 +6377,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4f557a290414101a1c611ff5e781c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.GameResolution
-  viewportHandler: {fileID: 371825851}
+  orthographiccamera: {fileID: 371825847}
   gameResolutionData:
     gamePhase: 0
-    ipadscale: 22
-    iphonescale: 25.5
+    ipadscale: 8.25
+    iphonescale: 6
+    sceneObjects:
+    - ipad_object: {fileID: 417907878}
+      iphone_object: {fileID: 769325345}
+  background: {fileID: 2002553598}
 --- !u!1 &1249581015
 GameObject:
   m_ObjectHideFlags: 0
@@ -6588,7 +6396,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1249581016}
   - component: {fileID: 1249581017}
-  - component: {fileID: 1249581018}
   - component: {fileID: 1249581019}
   m_Layer: 0
   m_Name: Dog
@@ -6670,20 +6477,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1249581018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249581015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: -1.74, y: -3.25, z: 125.6}
 --- !u!95 &1249581019
 Animator:
   serializedVersion: 7
@@ -6716,7 +6509,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1257055395}
   - component: {fileID: 1257055398}
-  - component: {fileID: 1257055397}
   m_Layer: 0
   m_Name: bone (1)
   m_TagString: Untagged
@@ -6739,20 +6531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 111303073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1257055397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257055394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 5.57, y: 0.15, z: -1.81}
 --- !u!212 &1257055398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6821,7 +6599,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1292735628}
   - component: {fileID: 1292735631}
-  - component: {fileID: 1292735630}
   - component: {fileID: 1292735629}
   - component: {fileID: 1292735632}
   m_Layer: 0
@@ -6859,20 +6636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.ClikcableObject
---- !u!114 &1292735630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292735627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.56, y: 1.81, z: 95.5}
 --- !u!212 &1292735631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6992,7 +6755,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1310224935}
   - component: {fileID: 1310224937}
-  - component: {fileID: 1310224936}
   m_Layer: 0
   m_Name: flower (4)
   m_TagString: Untagged
@@ -7015,20 +6777,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1310224936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310224934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 1.66, y: -3.91, z: 93}
 --- !u!212 &1310224937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7189,7 +6937,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1383384048}
   - component: {fileID: 1383384049}
-  - component: {fileID: 1383384050}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -7274,20 +7021,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1383384050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383384047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 8
-  anchorOffset: {x: 3.28, y: -7.25, z: 99}
 --- !u!1001 &1395539571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7375,7 +7108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1400734868}
   - component: {fileID: 1400734870}
-  - component: {fileID: 1400734869}
   m_Layer: 0
   m_Name: STINKY__0
   m_TagString: Untagged
@@ -7398,20 +7130,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 287047163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1400734869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400734867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.58, y: 1.18, z: 94.1}
 --- !u!212 &1400734870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7480,7 +7198,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1402068386}
   - component: {fileID: 1402068388}
-  - component: {fileID: 1402068387}
   m_Layer: 0
   m_Name: flower (1)
   m_TagString: Untagged
@@ -7503,20 +7220,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1827899784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1402068387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402068385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 0
-  anchorOffset: {x: 3.17, y: 0.25, z: 93}
 --- !u!212 &1402068388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7585,7 +7288,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1405739361}
   - component: {fileID: 1405739364}
-  - component: {fileID: 1405739363}
   - component: {fileID: 1405739362}
   - component: {fileID: 1405739365}
   m_Layer: 0
@@ -7629,20 +7331,6 @@ MonoBehaviour:
   offset: {x: 0, y: 2, z: 0}
   faceCamera: 1
   gamecamera: {fileID: 371825847}
---- !u!114 &1405739363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405739360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.99, y: -2.56, z: 94.4}
 --- !u!212 &1405739364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7814,7 +7502,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -7937,7 +7626,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1470642732}
   - component: {fileID: 1470642734}
-  - component: {fileID: 1470642733}
   m_Layer: 0
   m_Name: Tick
   m_TagString: Untagged
@@ -7960,20 +7648,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 287047163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1470642733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470642731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.58, y: 1.18, z: 92.6}
 --- !u!212 &1470642734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8113,7 +7787,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 245245586}
+  - {fileID: 2074276577}
+  - {fileID: 769325346}
   m_Father: {fileID: 226116472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496352044 stripped
@@ -8475,7 +8152,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1579256160}
   - component: {fileID: 1579256162}
-  - component: {fileID: 1579256161}
   m_Layer: 0
   m_Name: flower (2)
   m_TagString: Untagged
@@ -8498,20 +8174,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1827899784}
   m_LocalEulerAnglesHint: {x: 0, y: -179.937, z: -30.24}
---- !u!114 &1579256161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579256159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 2.79, y: -4.8, z: 95.7}
 --- !u!212 &1579256162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8580,7 +8242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1585855756}
   - component: {fileID: 1585855757}
-  - component: {fileID: 1585855758}
   - component: {fileID: 1585855759}
   - component: {fileID: 1585855760}
   m_Layer: 0
@@ -8663,20 +8324,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1585855758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585855755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 4.95, y: -3.46, z: 86.8}
 --- !u!114 &1585855759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8787,7 +8434,7 @@ MonoBehaviour:
   tree: {fileID: 2031192422}
   treeParticles: {fileID: 2207874709931381730}
   cameraAnchors:
-  - {fileID: 1112552735}
+  - {fileID: 0}
   postboxanimator: {fileID: 2138514317}
   postbox: {fileID: 2138514316}
   boneanimator: {fileID: 111303076}
@@ -9011,7 +8658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1661701363}
   - component: {fileID: 1661701366}
-  - component: {fileID: 1661701365}
   - component: {fileID: 1661701364}
   - component: {fileID: 1661701367}
   - component: {fileID: 1661701368}
@@ -9060,20 +8706,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1661701365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661701362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.56, y: 1.81, z: 96.3}
 --- !u!212 &1661701366
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9280,7 +8912,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1665616779}
   - component: {fileID: 1665616782}
-  - component: {fileID: 1665616781}
   - component: {fileID: 1665616780}
   - component: {fileID: 1665616783}
   m_Layer: 0
@@ -9323,20 +8954,6 @@ MonoBehaviour:
   offset: {x: -2.08, y: 5.09, z: 0}
   faceCamera: 1
   gamecamera: {fileID: 371825847}
---- !u!114 &1665616781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665616778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.12, y: -0.07, z: 94.4}
 --- !u!212 &1665616782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9503,7 +9120,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -14480,7 +14098,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -14728,7 +14347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1724404661}
   - component: {fileID: 1724404663}
-  - component: {fileID: 1724404662}
   m_Layer: 0
   m_Name: roof (1)
   m_TagString: Untagged
@@ -14751,20 +14369,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1383384048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1724404662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724404660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: -3.97, y: 2.19, z: 96.6}
 --- !u!212 &1724404663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14949,7 +14553,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -15086,7 +14691,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1827899784}
   - component: {fileID: 1827899786}
-  - component: {fileID: 1827899785}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -15113,20 +14717,6 @@ Transform:
   - {fileID: 1402068386}
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1827899785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827899783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 0
-  anchorOffset: {x: 0, y: 0, z: 93}
 --- !u!212 &1827899786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15195,7 +14785,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1857970657}
   - component: {fileID: 1857970659}
-  - component: {fileID: 1857970658}
   m_Layer: 0
   m_Name: mailbox (1)
   m_TagString: Untagged
@@ -15218,20 +14807,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2138514312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1857970658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857970656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 2
-  anchorOffset: {x: -2.82, y: 3.88, z: 93.5}
 --- !u!212 &1857970659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15363,7 +14938,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1882097005}
   - component: {fileID: 1882097007}
-  - component: {fileID: 1882097006}
   m_Layer: 0
   m_Name: window
   m_TagString: Untagged
@@ -15388,20 +14962,6 @@ Transform:
   - {fileID: 1174887229}
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1882097006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882097004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.64, y: 1.58, z: 97}
 --- !u!212 &1882097007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15616,7 +15176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1986204637}
   - component: {fileID: 1986204639}
-  - component: {fileID: 1986204638}
   m_Layer: 0
   m_Name: roof (2)
   m_TagString: Untagged
@@ -15639,20 +15198,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1383384048}
   m_LocalEulerAnglesHint: {x: 0, y: 193.153, z: 0}
---- !u!114 &1986204638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986204636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 9.43, y: 2.65, z: 93.5}
 --- !u!212 &1986204639
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15743,7 +15288,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1764698664}
@@ -15816,7 +15361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2027232196}
   - component: {fileID: 2027232198}
-  - component: {fileID: 2027232197}
   m_Layer: 0
   m_Name: balcony
   m_TagString: Untagged
@@ -15839,20 +15383,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2027232197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027232195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 4
-  anchorOffset: {x: 2.77, y: -1.98, z: 96}
 --- !u!212 &2027232198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15921,7 +15451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2031192418}
   - component: {fileID: 2031192419}
-  - component: {fileID: 2031192420}
   - component: {fileID: 2031192422}
   - component: {fileID: 2031192421}
   m_Layer: 0
@@ -16005,20 +15534,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2031192420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031192417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 0.07, y: -4.58, z: 97}
 --- !u!60 &2031192421
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16344,7 +15859,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2069819121}
   - component: {fileID: 2069819123}
-  - component: {fileID: 2069819122}
   m_Layer: 0
   m_Name: ground
   m_TagString: Untagged
@@ -16367,20 +15881,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2069819122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069819120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 1
-  anchorOffset: {x: 0, y: 1.18, z: 94}
 --- !u!212 &2069819123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16516,6 +16016,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c3915337f3d4ea9acac2031e96fcdf, type: 3}
+--- !u!1 &2074276576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074276577}
+  m_Layer: 0
+  m_Name: Cameraoffsetposition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074276577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074276576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1493438214}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081547649
 GameObject:
   m_ObjectHideFlags: 0
@@ -16526,7 +16057,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2081547650}
   - component: {fileID: 2081547652}
-  - component: {fileID: 2081547651}
   - component: {fileID: 2081547654}
   - component: {fileID: 2081547653}
   m_Layer: 0
@@ -16552,20 +16082,6 @@ Transform:
   - {fileID: 1533217998}
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081547651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081547649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 3
-  anchorOffset: {x: 8.85, y: -5.25, z: 97}
 --- !u!212 &2081547652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16993,7 +16509,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -17077,7 +16594,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2138514312}
   - component: {fileID: 2138514314}
-  - component: {fileID: 2138514313}
   - component: {fileID: 2138514316}
   - component: {fileID: 2138514315}
   - component: {fileID: 2138514317}
@@ -17104,20 +16620,6 @@ Transform:
   - {fileID: 1857970657}
   m_Father: {fileID: 1477744764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2138514313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138514311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 2
-  anchorOffset: {x: -2.42, y: 6.06, z: 0}
 --- !u!212 &2138514314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17472,7 +16974,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulb
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1679915206075225044, guid: c4659ff8337354c07b59f09dd9642132, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

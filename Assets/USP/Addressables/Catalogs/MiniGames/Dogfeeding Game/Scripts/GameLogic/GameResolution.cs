@@ -7,6 +7,12 @@ namespace USP.Minigame.DF_Game
     
     public class GameResolution : MonoBehaviour
     {
+        [Serializable]
+        public class SceneObjects
+        {
+            public GameObject ipad_object;
+            public GameObject iphone_object;
+        }
 
         [Serializable]
         public class GameResolutionData
@@ -14,15 +20,17 @@ namespace USP.Minigame.DF_Game
             public DF_GameManager.GamePhases gamePhase;
             public float ipadscale;
             public float iphonescale;
+            public List<SceneObjects> sceneObjects;
         }
         
         
-        [SerializeField] ViewportHandler viewportHandler;
+        [SerializeField] Camera orthographiccamera;
         [SerializeField] GameResolutionData gameResolutionData;
-
+        [SerializeField] private SpriteRenderer background;
         public void Awake()
         {
            CheckDeviceType();
+           
         }
         private void CheckDeviceType()
         {
@@ -35,18 +43,38 @@ namespace USP.Minigame.DF_Game
             // Common aspect ratio ranges
             if (aspect >= 1.7f && aspect <= 1.8f)
             {
-                viewportHandler.UnitsSize=gameResolutionData.iphonescale;
+                orthographiccamera.orthographicSize=gameResolutionData.iphonescale;
+                AdjustCameraSize();
+                EnableIpadObjects(false);
             }
             else if (aspect >= 1.3f && aspect <= 1.4f)
             {
                 Debug.Log("💻 Likely iPad (4:3)");
-                viewportHandler.UnitsSize=gameResolutionData.ipadscale;
+                orthographiccamera.orthographicSize=gameResolutionData.ipadscale;
+                //Keep default orthoscale
+                EnableIpadObjects(true);
                 
             }
             else
             {
+                orthographiccamera.orthographicSize=gameResolutionData.iphonescale;
+                AdjustCameraSize();
+                EnableIpadObjects(false);
                 Debug.Log("🖥️ Other aspect ratio detected");
             }
+        }
+        void AdjustCameraSize()
+        {
+            const float maxSize = 5.4F;
+            float aspectRatio = (float) Screen.width / Screen.height;
+            float requiredSize = background.bounds.size.x / (2F * aspectRatio);
+            orthographiccamera.orthographicSize = Mathf.Min(requiredSize, maxSize);
+        }
+
+        void EnableIpadObjects(bool enable)
+        {
+            gameResolutionData.sceneObjects.ForEach(x=>x.ipad_object.SetActive(enable));
+            gameResolutionData.sceneObjects.ForEach(x=>x.iphone_object.SetActive(!enable));
         }
     }
 }

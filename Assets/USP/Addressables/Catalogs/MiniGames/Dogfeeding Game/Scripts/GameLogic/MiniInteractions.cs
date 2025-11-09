@@ -31,10 +31,10 @@ namespace USP.Minigame.DF_Game
 
         public void DisableDraggableAnchors()
         {
-            foreach (var cameraAnchor in cameraAnchors)
-            {
-                cameraAnchor.enabled = false;
-            }
+            // foreach (var cameraAnchor in cameraAnchors)
+            // {
+            //     cameraAnchor.enabled = false;
+            // }
         }
 
         private void Start()
