@@ -36,7 +36,7 @@ namespace USP.Minigame.DF_Game
 
         private void OnEnable()
         {
-            
+            Initialize();
         }
 
         public void Initialize()

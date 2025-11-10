@@ -35,7 +35,7 @@ namespace USP.Minigame.DF_Game
 
         private void OnEnable()
         {
-            
+            StartDogFeeding();
         }
 
         public void StartDogFeeding()
