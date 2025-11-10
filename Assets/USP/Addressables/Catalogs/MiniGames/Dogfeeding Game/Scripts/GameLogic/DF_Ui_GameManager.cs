@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace USP.Minigame.DF_Game
@@ -38,9 +39,11 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private GameObject doorknockstatus;
         [SerializeField] private GameObject girlcharacter;
         
-       // [SerializeField] private TutorialPointer TutorialPointer;
+        [SerializeField] private TutorialPointer tutorialPointer;
 
         private bool DogspeechComplete;
+        
+        [SerializeField] List<Transform> tutorialPoints;
         
         private void Start()
         {
@@ -103,6 +106,7 @@ namespace USP.Minigame.DF_Game
         [ContextMenu("restart game")]
         public void RestartGame()
         {
+            tutorialPointer.Stoptutorial();
             restartdoorknockparticle.Play();
             restartdoor.gameObject.SetActive(false);
             gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Bath,false);
@@ -124,7 +128,12 @@ namespace USP.Minigame.DF_Game
             feedingspeechbubble.gameObject.SetActive(false);
             bathspeechbubble.gameObject.SetActive(false);
             dogfinalspeechbubble.gameObject.SetActive(false);
-           // TutorialPointer.ShowTap(doorpoint);
+            Invoke("RunTutoial",3f);
+        }
+        [ContextMenu("run tut")]
+        public void RunTutoial()
+        {
+            tutorialPointer.UpdateTargets(doorpoint);
         }
 
         /// <summary>
@@ -195,7 +204,7 @@ namespace USP.Minigame.DF_Game
           
             ShowDogSpeech(0); // “Hi”
             dogspeechbubble.EnableClick(DogsaysHI);
-           // TutorialPointer.ShowTap(dogspeechbubble.gameObject.transform);
+            tutorialPointer.UpdateTargets(tutorialPoints[0]);
             yield return new WaitUntil(() => DogspeechComplete);
             soundManager.PlaySFX("Hello");
             CloseGirlSpeech();
@@ -262,7 +271,8 @@ namespace USP.Minigame.DF_Game
             // Optional pop animation
             bathspeechbubble.ShowBubble(0,-1f,false);
             feedingspeechbubble.ShowBubble(00,-1f,false);
-          //  TutorialPointer.ShowTap(feedingspeechbubble.gameObject.transform);
+            
+            tutorialPointer.UpdateTargets(tutorialPoints[1]);
         }
 
         /// <summary>
@@ -316,12 +326,20 @@ namespace USP.Minigame.DF_Game
             if (feedingDone || bathDone)
             {
                 dogAnimator.SetTrigger("DogOutidle");
+                if(!feedingDone)
+                    tutorialPointer.UpdateTargets(tutorialPoints[1]);
+                else if (!bathDone)
+                {
+                    tutorialPointer.UpdateTargets(tutorialPoints[2]);
+                }
             }
             if (feedingDone && bathDone)
             {
                 Debug.Log("All mini-games completed. Triggering game ending sequence...");
                 StartCoroutine(GameEndSequence());
             }
+           
+            
         }
 
         
@@ -336,6 +354,7 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
+            tutorialPointer.UpdateTargets(tutorialPoints[2]);
            // TutorialPointer.ShowTap(dogfinalspeechbubble.gameObject.transform);
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
@@ -371,6 +390,7 @@ namespace USP.Minigame.DF_Game
             restartdoor.gameObject.SetActive(true);
             restartdoor.OnClick += RestartGame;
             
+            tutorialPointer.UpdateTargets(restartdoor.gameObject.transform);
 
             // Optional: Trigger kennel close animation
             if (kennelAnimator != null)

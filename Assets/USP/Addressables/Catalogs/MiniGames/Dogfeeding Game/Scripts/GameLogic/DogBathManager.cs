@@ -25,7 +25,7 @@ namespace USP.Minigame.DF_Game
         
         [SerializeField] private Animator animator;
         [SerializeField] private string[] stateNames; // e.g. "Stage1", "Stage2", "Stage3", etc.
-
+        [SerializeField] private TutorialPointer tutorialPointer;
         private int currentIndex = 0;
         
 
@@ -51,6 +51,7 @@ namespace USP.Minigame.DF_Game
             {
                 bubble.SetActive(true);
             }
+            tutorialPointer.UpdateTargets(bubbles[0].transform);
         }
 
         public void OnClickOnBathBubble(BathBubble bathBubble)
@@ -75,6 +76,8 @@ namespace USP.Minigame.DF_Game
             {
                 StartCoroutine(DogbathComplete());
             }
+            
+            
         }
 
         private IEnumerator DogbathComplete()

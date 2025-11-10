@@ -1,160 +1,214 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections;
-using UnityEngine.InputSystem; // ✅ For new Input System
+using System.Collections.Generic;
 
 namespace USP.Minigame.DF_Game
 {
     public class TutorialPointer : MonoBehaviour
     {
         [Header("Pointer Settings")]
-        public Transform pointer;           // The pointer sprite in the scene
-        public float moveSpeed = 2f;        // Speed for swipe motion
-        public float tapScale = 0.9f;       // Scale when “pressing” down
-        public float tapDuration = 0.4f;    // How long one tap takes
-        public float idleDelay = 5f;        // Replay tutorial after X seconds of no input
+        [SerializeField] private RectTransform pointer;        // UI Image of the hand or arrow
+        [SerializeField] private float moveSpeed = 2f;         // Speed for swipe/tap animation
+        [SerializeField] private float tapScale = 0.9f;        // Scale down on tap
+        [SerializeField] private float tapDuration = 0.3f;     // Tap press animation time
+        [SerializeField] private float idleTimeToReplay = 5f;  // Seconds before replay if no input
+        [SerializeField] private float tutorialDisplayTime = 4f; // How long tutorial plays before stopping
 
-        private Coroutine currentRoutine;
-        private float idleTimer;
-        private bool hasReplayed = false;
+        [Header("Tutorial Targets")]
+        [SerializeField] private List<Transform> targets;      // One = tap, Two = swipe
 
-        private enum TutorialType { None, Tap, Swipe }
-        private TutorialType lastTutorialType = TutorialType.None;
+        [Header("References")]
+        [SerializeField] private Camera gameCamera;            // Camera rendering your 2D world
+        [SerializeField] private Canvas canvas;                // Canvas where pointer lives (Screen Space - Camera)
 
-        private Transform lastTapTarget;
-        private Transform swipeFrom, swipeTo;
+        private Coroutine tutorialRoutine;
+        private float lastInteractionTime;
+        private bool isRunning;
+        private bool hasStartedOnce;
 
-        // ---------------- UNITY METHODS ----------------
+        // New Input System action
+        private InputAction clickOrTouchAction;
 
-        private void Update()
+        void Awake()
         {
-            // ✅ Detect input using the new Input System
-            if (Keyboard.current.anyKey.wasPressedThisFrame ||
-                Mouse.current.leftButton.wasPressedThisFrame ||
-                Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            clickOrTouchAction = new InputAction(type: InputActionType.PassThrough, binding: "<Pointer>/press");
+            clickOrTouchAction.AddBinding("<Touchscreen>/press");
+
+            if (canvas == null)
+                canvas = pointer.GetComponentInParent<Canvas>();
+
+            if (gameCamera == null)
+                gameCamera = Camera.main;
+        }
+
+        void OnEnable()
+        {
+            clickOrTouchAction.Enable();
+            clickOrTouchAction.performed += OnUserInteracted;
+        }
+
+        void OnDisable()
+        {
+            clickOrTouchAction.performed -= OnUserInteracted;
+            clickOrTouchAction.Disable();
+        }
+
+        public void Stoptutorial()
+        {
+            targets.Clear();
+        }
+
+        private void OnUserInteracted(InputAction.CallbackContext ctx)
+        {
+            pointer.gameObject.SetActive(false);
+            lastInteractionTime = Time.time;
+        }
+
+        void Start()
+        {
+            lastInteractionTime = Time.time;
+        }
+
+        void Update()
+        {
+            if (targets == null || targets.Count == 0)
             {
-                idleTimer = 0f;
-                hasReplayed = false;
+               
+                return;
             }
+             
+            // Restart only if the tutorial was shown at least once
+            if (hasStartedOnce && !isRunning && Time.time - lastInteractionTime > idleTimeToReplay)
+            {
+                StartTutorial();
+            }
+        }
+
+        public void UpdateTargets(Transform target, Transform anchor = null)
+        {
+            targets.Clear();
+
+            if (anchor == null)
+                targets.Add(target);
             else
             {
-                idleTimer += Time.deltaTime;
+                targets.Add(anchor);
+                targets.Add(target);
+            }
 
-                if (idleTimer >= idleDelay && !hasReplayed)
+            StartTutorial();
+        }
+
+        void StartTutorial()
+        {
+            hasStartedOnce = true;
+
+            if (tutorialRoutine != null)
+                StopCoroutine(tutorialRoutine);
+
+            if (targets == null || targets.Count == 0)
+                return;
+
+            if (targets.Count == 1)
+                tutorialRoutine = StartCoroutine(TapRoutine(targets[0]));
+            else if (targets.Count == 2)
+                tutorialRoutine = StartCoroutine(SwipeRoutine(targets[0], targets[1]));
+        }
+
+        // -------------------------------
+        // 🖐 TAP ROUTINE
+        // -------------------------------
+        IEnumerator TapRoutine(Transform target)
+        {
+            yield return new WaitForSeconds(2f);
+            isRunning = true;
+            pointer.gameObject.SetActive(true);
+            float startTime = Time.time;
+
+            while (Time.time - startTime < tutorialDisplayTime)
+            {
+                UpdatePointerPosition(target);
+
+                // Tap down
+                pointer.localScale = Vector3.one * tapScale;
+                yield return new WaitForSeconds(tapDuration);
+
+                // Tap up
+                pointer.localScale = Vector3.one;
+                yield return new WaitForSeconds(tapDuration * 2f);
+
+                // Stop early if player interacted
+                if (Time.time - lastInteractionTime < 0.5f)
+                    break;
+            }
+
+            pointer.gameObject.SetActive(false);
+            isRunning = false;
+        }
+
+        // -------------------------------
+        // 👉 SWIPE ROUTINE
+        // -------------------------------
+        IEnumerator SwipeRoutine(Transform start, Transform end)
+        {
+            isRunning = true;
+            pointer.gameObject.SetActive(true);
+            float startTime = Time.time;
+
+            Vector2 startLocal, endLocal;
+            if (!WorldToCanvasLocal(start.position, out startLocal) ||
+                !WorldToCanvasLocal(end.position, out endLocal))
+            {
+                Debug.LogWarning("Failed to convert swipe positions!");
+                yield break;
+            }
+
+            while (Time.time - startTime < tutorialDisplayTime)
+            {
+                float t = 0f;
+                while (t < 1f)
                 {
-                    idleTimer = 0f;
-                    hasReplayed = true;
-                    ReplayLastTutorial();
+                    t += Time.deltaTime * moveSpeed;
+                    Vector2 lerpPos = Vector2.Lerp(startLocal, endLocal, t);
+                    pointer.localPosition = lerpPos;
+                    yield return null;
                 }
+
+                yield return new WaitForSeconds(0.5f);
+                pointer.localPosition = startLocal;
+
+                // Stop early if player interacted
+                if (Time.time - lastInteractionTime < 0.5f)
+                    break;
             }
-        }
-
-        // 👉 Call this to show a TAP animation on a sprite (Transform)
-        public void ShowTap(Transform target)
-        {
-            StopCurrent();
-            currentRoutine = StartCoroutine(TapRoutine(target));
-
-            lastTutorialType = TutorialType.Tap;
-            lastTapTarget = target;
-
-            idleTimer = 0f;
-            hasReplayed = false;
-        }
-
-        // 👉 Call this to show a SWIPE animation between two sprites (Transform)
-        public void ShowSwipe(Transform from, Transform to)
-        {
-            StopCurrent();
-            currentRoutine = StartCoroutine(SwipeRoutine(from, to));
-
-            lastTutorialType = TutorialType.Swipe;
-            swipeFrom = from;
-            swipeTo = to;
-
-            idleTimer = 0f;
-            hasReplayed = false;
-        }
-
-        // 👉 Stop any current tutorial animation
-        public void StopPointer()
-        {
-            StopCurrent();
-            pointer.gameObject.SetActive(false);
-        }
-
-        private void StopCurrent()
-        {
-            if (currentRoutine != null)
-                StopCoroutine(currentRoutine);
-
-            currentRoutine = null;
-        }
-
-        // ---------------- PRIVATE ROUTINES ----------------
-
-        private IEnumerator TapRoutine(Transform target)
-        {
-            pointer.gameObject.SetActive(true);
-
-            pointer.position = target.position; // Keep pointer aligned with target
-
-            // Store the original scale once
-            Vector3 originalScale = pointer.localScale;
-
-            // Tap down + release using original scale as baseline
-            yield return ScalePointer(originalScale * tapScale, tapDuration / 2f);
-            yield return ScalePointer(originalScale, tapDuration / 2f);
-            yield return new WaitForSeconds(0.3f);
 
             pointer.gameObject.SetActive(false);
+            isRunning = false;
         }
 
-        private IEnumerator SwipeRoutine(Transform from, Transform to)
+        // -------------------------------
+        // 🎯 UTILITY: Convert World → Canvas Local
+        // -------------------------------
+        private void UpdatePointerPosition(Transform worldTarget)
         {
-            pointer.gameObject.SetActive(true);
-
-            Vector3 start = from.position + Vector3.up * 0.5f;
-            Vector3 end = to.position + Vector3.up * 0.5f;
-            pointer.position = start;
-
-            float elapsed = 0f;
-
-            while (elapsed < 1f)
-            {
-                elapsed += Time.deltaTime * moveSpeed;
-                pointer.position = Vector3.Lerp(start, end, Mathf.SmoothStep(0, 1, elapsed));
-                yield return null;
-            }
-
-            yield return new WaitForSeconds(0.3f);
-            pointer.gameObject.SetActive(false);
+            if (WorldToCanvasLocal(worldTarget.position, out Vector2 localPoint))
+                pointer.localPosition = localPoint;
         }
 
-        private IEnumerator ScalePointer(Vector3 targetScale, float duration)
+        private bool WorldToCanvasLocal(Vector3 worldPos, out Vector2 localPoint)
         {
-            Vector3 initialScale = pointer.localScale;
-            float elapsed = 0f;
+            localPoint = Vector2.zero;
+            if (canvas == null || gameCamera == null)
+                return false;
 
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                pointer.localScale = Vector3.Lerp(initialScale, targetScale, elapsed / duration);
-                yield return null;
-            }
-        }
-
-        // ---------------- REPLAY LOGIC ----------------
-
-        private void ReplayLastTutorial()
-        {
-            if (lastTutorialType == TutorialType.Tap && lastTapTarget != null)
-            {
-                ShowTap(lastTapTarget);
-            }
-            else if (lastTutorialType == TutorialType.Swipe && swipeFrom != null && swipeTo != null)
-            {
-                ShowSwipe(swipeFrom, swipeTo);
-            }
+            Vector3 screenPoint = gameCamera.WorldToScreenPoint(worldPos);
+            return RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform,
+                screenPoint,
+                canvas.worldCamera,
+                out localPoint
+            );
         }
     }
 }

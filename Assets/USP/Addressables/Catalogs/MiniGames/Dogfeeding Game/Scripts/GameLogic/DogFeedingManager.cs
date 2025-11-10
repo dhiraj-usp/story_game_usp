@@ -30,6 +30,8 @@ namespace USP.Minigame.DF_Game
         private int totalTiltsRequired = 3;
         [SerializeField] private bool isCycleActive = false;
         private bool isSnackDropComplete=false;
+        
+        [SerializeField] private TutorialPointer tutorialPointer;
 
         private void OnEnable()
         {
@@ -38,6 +40,7 @@ namespace USP.Minigame.DF_Game
 
         public void StartDogFeeding()
         {
+            tutorialPointer.UpdateTargets(FeedingBowl.gameObject.transform,FoodBox.gameObject.transform);
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Feeding);
             FoodBox.enabled=true;
             // reset state
