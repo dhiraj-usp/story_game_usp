@@ -121,31 +121,59 @@ namespace USP.Minigame.DF_Game
         // -------------------------------
         IEnumerator TapRoutine(Transform target)
         {
-            yield return new WaitForSeconds(2f);
             isRunning = true;
             pointer.gameObject.SetActive(true);
-            float startTime = Time.time;
 
-            while (Time.time - startTime < tutorialDisplayTime)
+            Canvas canvas = pointer.GetComponentInParent<Canvas>();
+            if (canvas == null)
             {
-                UpdatePointerPosition(target);
+                Debug.LogWarning("Pointer must be under a Canvas!");
+                yield break;
+            }
 
-                // Tap down
+            float elapsed = 0f;
+
+            while (elapsed < tutorialDisplayTime)
+            {
+                // Update pointer position to follow target (important for moving objects)
+                Vector3 screenPos = gameCamera.WorldToScreenPoint(target.position);
+                if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                        canvas.transform as RectTransform,
+                        screenPos,
+                        canvas.worldCamera,
+                        out Vector2 localPoint))
+                {
+                    pointer.localPosition = localPoint;
+                }
+
+                // Tap animation (down)
                 pointer.localScale = Vector3.one * tapScale;
                 yield return new WaitForSeconds(tapDuration);
+                elapsed += tapDuration;
 
-                // Tap up
+                // Tap animation (up)
                 pointer.localScale = Vector3.one;
                 yield return new WaitForSeconds(tapDuration * 2f);
+                elapsed += tapDuration * 2f;
 
-                // Stop early if player interacted
+                // Check for user input — stop early
                 if (Time.time - lastInteractionTime < 0.5f)
+                {
+                    Debug.Log("Tutorial stopped due to user input");
                     break;
+                }
+
+                // Add elapsed frame time
+                elapsed += Time.deltaTime;
             }
 
             pointer.gameObject.SetActive(false);
             isRunning = false;
+
+            // After tutorial ends, start idle timer again
+            lastInteractionTime = Time.time;
         }
+
 
         // -------------------------------
         // 👉 SWIPE ROUTINE
@@ -154,38 +182,58 @@ namespace USP.Minigame.DF_Game
         {
             isRunning = true;
             pointer.gameObject.SetActive(true);
-            float startTime = Time.time;
 
-            Vector2 startLocal, endLocal;
-            if (!WorldToCanvasLocal(start.position, out startLocal) ||
-                !WorldToCanvasLocal(end.position, out endLocal))
+            Canvas canvas = pointer.GetComponentInParent<Canvas>();
+            if (canvas == null)
             {
-                Debug.LogWarning("Failed to convert swipe positions!");
+                Debug.LogWarning("Pointer must be under a Canvas!");
                 yield break;
             }
 
-            while (Time.time - startTime < tutorialDisplayTime)
+            float elapsed = 0f;
+
+            while (elapsed < tutorialDisplayTime)
             {
-                float t = 0f;
-                while (t < 1f)
+                Vector3 startPos = gameCamera.WorldToScreenPoint(start.position);
+                Vector3 endPos = gameCamera.WorldToScreenPoint(end.position);
+
+                if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                        canvas.transform as RectTransform,
+                        startPos,
+                        canvas.worldCamera,
+                        out Vector2 localStart) &&
+                    RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                        canvas.transform as RectTransform,
+                        endPos,
+                        canvas.worldCamera,
+                        out Vector2 localEnd))
                 {
-                    t += Time.deltaTime * moveSpeed;
-                    Vector2 lerpPos = Vector2.Lerp(startLocal, endLocal, t);
-                    pointer.localPosition = lerpPos;
-                    yield return null;
+                    float t = 0f;
+                    while (t < 1f)
+                    {
+                        t += Time.deltaTime * moveSpeed;
+                        pointer.localPosition = Vector3.Lerp(localStart, localEnd, t);
+                        yield return null;
+                    }
+
+                    yield return new WaitForSeconds(0.5f);
+                    elapsed += (1f / moveSpeed) + 0.5f; // approximate swipe + pause time
                 }
 
-                yield return new WaitForSeconds(0.5f);
-                pointer.localPosition = startLocal;
-
-                // Stop early if player interacted
                 if (Time.time - lastInteractionTime < 0.5f)
+                {
+                    Debug.Log("Tutorial stopped due to user input");
                     break;
+                }
+
+                elapsed += Time.deltaTime;
             }
 
             pointer.gameObject.SetActive(false);
             isRunning = false;
+            lastInteractionTime = Time.time;
         }
+
 
         // -------------------------------
         // 🎯 UTILITY: Convert World → Canvas Local

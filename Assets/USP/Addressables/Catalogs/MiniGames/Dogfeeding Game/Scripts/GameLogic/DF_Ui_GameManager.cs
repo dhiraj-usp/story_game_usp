@@ -204,6 +204,7 @@ namespace USP.Minigame.DF_Game
           
             ShowDogSpeech(0); // “Hi”
             dogspeechbubble.EnableClick(DogsaysHI);
+            yield return new WaitForSeconds(1f);
             tutorialPointer.UpdateTargets(tutorialPoints[0]);
             yield return new WaitUntil(() => DogspeechComplete);
             soundManager.PlaySFX("Hello");
@@ -217,6 +218,8 @@ namespace USP.Minigame.DF_Game
             yield return new WaitForSeconds(2.2f);
             soundManager.PlaySFX("Woof");
             ShowDogOptions();
+            yield return new WaitForSeconds(1f);
+            tutorialPointer.UpdateTargets(tutorialPoints[1]);
         }
 
         private void DogsaysHI()
@@ -272,7 +275,7 @@ namespace USP.Minigame.DF_Game
             bathspeechbubble.ShowBubble(0,-1f,false);
             feedingspeechbubble.ShowBubble(00,-1f,false);
             
-            tutorialPointer.UpdateTargets(tutorialPoints[1]);
+           
         }
 
         /// <summary>

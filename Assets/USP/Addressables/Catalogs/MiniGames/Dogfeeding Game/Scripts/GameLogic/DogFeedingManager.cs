@@ -35,12 +35,12 @@ namespace USP.Minigame.DF_Game
 
         private void OnEnable()
         {
-            StartDogFeeding();
+            
         }
 
         public void StartDogFeeding()
         {
-            tutorialPointer.UpdateTargets(FeedingBowl.gameObject.transform,FoodBox.gameObject.transform);
+            
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.Feeding);
             FoodBox.enabled=true;
             // reset state
@@ -58,7 +58,8 @@ namespace USP.Minigame.DF_Game
             if(FoodBox.OnTiltThresholdReached != null)
                 FoodBox.OnTiltThresholdReached -= OnBoxTiltedOverBowl;
             FoodBox.OnTiltThresholdReached += OnBoxTiltedOverBowl;
-
+            tutorialPointer.UpdateTargets(FeedingBowl.gameObject.transform,FoodBox.gameObject.transform);
+            tutorialPointer.Stoptutorial();
             Debug.Log("Dog Feeding Started — waiting for first tilt");
         }
 

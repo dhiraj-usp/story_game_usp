@@ -78,9 +78,11 @@ namespace USP.Minigame.DF_Game
                     break;
                 case GamePhases.Feeding:
                     feedscene.SetActive(true);
+                    dogFeedingManager.StartDogFeeding();
                     break;
                 case GamePhases.Bath:
                     bathscene.SetActive(true);
+                    dogBathManager.Initialize();
                     break;
                 case GamePhases.GameEnd:
                     mainscene.SetActive(true);
