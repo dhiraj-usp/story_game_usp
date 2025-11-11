@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/USP/Addressables/Catalogs/MiniGames/USP_Hi_Hello_Game/Scenes/DogFeeding.unity
+    path: Assets/USP/Addressables/Catalogs/MiniGames/usp_hi_hello_game/Scenes/DogFeeding.unity
     guid: 7d71ce6a4fafb4bf6bb6913ac0b11d0c
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
