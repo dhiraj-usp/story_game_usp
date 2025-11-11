@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1392411014749576465}
   - component: {fileID: 2604758972245537946}
-  - component: {fileID: 1679915206075225044}
+  - component: {fileID: 8068352311574953065}
+  - component: {fileID: 3797180338130806973}
   m_Layer: 0
   m_Name: Bulb
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3522276, y: -0.15855652, z: -4.991376}
-  m_LocalScale: {x: 0.016603911, y: 0.0442981, z: 0.01659087}
+  m_LocalScale: {x: 0.028091703, y: 0.048605863, z: 0.021576429}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +92,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1679915206075225044
+--- !u!58 &8068352311574953065
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664731113607735763}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.000005722046, y: 0}
+  m_Radius: 1.5399998
+--- !u!114 &3797180338130806973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,8 +137,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3664731113607735763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ee080e0b5924b27a60353ec300d17c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c73ae33ea9854683b6397aa92758466, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.CameraAnchor
-  anchorType: 7
-  anchorOffset: {x: -2.44, y: -3.35, z: 95}
+  m_EditorClassIdentifier: Assembly-CSharp::USP.Minigame.DF_Game.ClikcableObject
