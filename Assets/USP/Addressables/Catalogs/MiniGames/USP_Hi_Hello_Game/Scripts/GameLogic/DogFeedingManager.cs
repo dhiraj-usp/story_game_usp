@@ -62,6 +62,12 @@ namespace USP.Minigame.DF_Game
             tutorialPointer.Stoptutorial();
             Debug.Log("Dog Feeding Started — waiting for first tilt");
         }
+        
+        [ContextMenu("Simulate tut")]
+        public void rundummytut()
+        {
+            tutorialPointer.UpdateTargets(FeedingBowl.gameObject.transform,FoodBox.gameObject.transform);
+        }
 
         public void ResetDogFeeding()
         {

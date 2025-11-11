@@ -82,7 +82,7 @@ namespace USP.Minigame.DF_Game
                
                 return;
             }
-             Debug.Log(Time.time - lastInteractionTime);
+             
             // Restart only if the tutorial was shown at least once
             if (hasStartedOnce && !isRunning && Time.time - lastInteractionTime > idleTimeToReplay)
             {

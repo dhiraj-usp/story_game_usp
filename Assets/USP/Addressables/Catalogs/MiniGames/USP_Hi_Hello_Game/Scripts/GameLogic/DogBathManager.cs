@@ -52,6 +52,7 @@ namespace USP.Minigame.DF_Game
                 bubble.SetActive(true);
             }
             tutorialPointer.UpdateTargets(bubbles[0].transform);
+            
         }
 
         public void OnClickOnBathBubble(BathBubble bathBubble)

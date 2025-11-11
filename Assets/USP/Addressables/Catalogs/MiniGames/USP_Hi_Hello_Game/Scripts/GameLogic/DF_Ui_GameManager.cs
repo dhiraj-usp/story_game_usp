@@ -333,10 +333,10 @@ namespace USP.Minigame.DF_Game
             {
                 dogAnimator.SetTrigger("DogOutidle");
                 if(!feedingDone)
-                    tutorialPointer.UpdateTargets(tutorialPoints[1]);
+                    tutorialPointer.UpdateTargets(tutorialPoints[2]);
                 else if (!bathDone)
                 {
-                    tutorialPointer.UpdateTargets(tutorialPoints[2]);
+                    tutorialPointer.UpdateTargets(tutorialPoints[1]);
                 }
             }
             if (feedingDone && bathDone)
