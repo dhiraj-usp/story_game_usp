@@ -134,6 +134,7 @@ namespace USP.Minigame.DF_Game
         public void RunTutoial()
         {
             tutorialPointer.UpdateTargets(doorpoint);
+            tutorialPointer.Stoptutorial();
         }
 
         /// <summary>
@@ -206,6 +207,7 @@ namespace USP.Minigame.DF_Game
             dogspeechbubble.EnableClick(DogsaysHI);
             yield return new WaitForSeconds(1f);
             tutorialPointer.UpdateTargets(tutorialPoints[0]);
+            tutorialPointer.Stoptutorial();
             yield return new WaitUntil(() => DogspeechComplete);
             soundManager.PlaySFX("Hello");
             CloseGirlSpeech();
@@ -220,6 +222,7 @@ namespace USP.Minigame.DF_Game
             ShowDogOptions();
             yield return new WaitForSeconds(1f);
             tutorialPointer.UpdateTargets(tutorialPoints[1]);
+            tutorialPointer.Stoptutorial();
         }
 
         private void DogsaysHI()
@@ -358,6 +361,7 @@ namespace USP.Minigame.DF_Game
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
             tutorialPointer.UpdateTargets(tutorialPoints[2]);
+            tutorialPointer.Stoptutorial();
            // TutorialPointer.ShowTap(dogfinalspeechbubble.gameObject.transform);
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
             dogfinalspeechbubble.EnableClick(DogfinalSpeechcomplete);
@@ -368,9 +372,11 @@ namespace USP.Minigame.DF_Game
 
             // Girl says “Bye!”
             girlspeechbubble.gameObject.SetActive(true);
+            girlspeechbubble.EnableClick(PlayGirlAudioBye);
             soundManager.PlaySFX("Bye");
             girlspeechbubble.ShowBubble(2); // Assume index 2 = "Bye!"
             yield return new WaitForSeconds(2.2f);
+            girlspeechbubble.DisableClick();
             girlspeechbubble.gameObject.SetActive(false);
             dogspeechbubble.gameObject.SetActive(false);
             // Dog goes back in
@@ -416,6 +422,11 @@ namespace USP.Minigame.DF_Game
         public void PlayGirlAudioHRU()
         {
             soundManager.PlaySFX("HRU");
+        }
+
+        public void PlayGirlAudioBye()
+        {
+            soundManager.PlaySFX("Bye");
         }
        
 

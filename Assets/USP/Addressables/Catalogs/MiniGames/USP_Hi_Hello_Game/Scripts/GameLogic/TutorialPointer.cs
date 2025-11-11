@@ -23,9 +23,10 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private Canvas canvas;                // Canvas where pointer lives (Screen Space - Camera)
 
         private Coroutine tutorialRoutine;
-        private float lastInteractionTime;
-        private bool isRunning;
-        private bool hasStartedOnce;
+        [SerializeField] private float lastInteractionTime;
+        [SerializeField] private bool isRunning;
+        [SerializeField] private bool hasStartedOnce;
+       
 
         // New Input System action
         private InputAction clickOrTouchAction;
@@ -56,12 +57,16 @@ namespace USP.Minigame.DF_Game
 
         public void Stoptutorial()
         {
-            targets.Clear();
+            
+            isRunning = false;
+            pointer.gameObject.SetActive(false);
+            if (tutorialRoutine != null)
+                StopCoroutine(tutorialRoutine);
         }
 
         private void OnUserInteracted(InputAction.CallbackContext ctx)
         {
-            pointer.gameObject.SetActive(false);
+            Stoptutorial();
             lastInteractionTime = Time.time;
         }
 
@@ -77,7 +82,7 @@ namespace USP.Minigame.DF_Game
                
                 return;
             }
-             
+             Debug.Log(Time.time - lastInteractionTime);
             // Restart only if the tutorial was shown at least once
             if (hasStartedOnce && !isRunning && Time.time - lastInteractionTime > idleTimeToReplay)
             {

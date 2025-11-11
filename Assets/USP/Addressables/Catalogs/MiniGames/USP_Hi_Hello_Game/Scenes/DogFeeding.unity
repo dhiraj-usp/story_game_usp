@@ -4136,7 +4136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &813782103
 Transform:
   m_ObjectHideFlags: 0
@@ -15408,11 +15408,14 @@ MonoBehaviour:
   moveSpeed: 2
   tapScale: 0.9
   tapDuration: 0.4
-  idleTimeToReplay: 5
+  idleTimeToReplay: 8
   tutorialDisplayTime: 2
   targets: []
   gameCamera: {fileID: 371825847}
   canvas: {fileID: 710098437}
+  lastInteractionTime: 0
+  isRunning: 0
+  hasStartedOnce: 0
 --- !u!4 &1897710606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5679949187617722615, guid: fac61cf1f04c24a9f98ad28d7efa8026, type: 3}
