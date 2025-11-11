@@ -87,7 +87,7 @@ namespace USP.Minigame.DF_Game
 
         public void UpdateTargets(Transform target, Transform anchor = null)
         {
-            return;
+            
             targets.Clear();
 
             if (anchor == null)

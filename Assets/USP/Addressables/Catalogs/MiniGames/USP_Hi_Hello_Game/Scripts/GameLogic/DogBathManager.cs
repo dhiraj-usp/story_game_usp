@@ -42,7 +42,7 @@ namespace USP.Minigame.DF_Game
         public void Initialize()
         {
             poppedCount = 0;
-            nextSpriteThreshold = 5;
+            nextSpriteThreshold = 7;
 
             
 
@@ -68,7 +68,7 @@ namespace USP.Minigame.DF_Game
             {
                 UpdateDogSprite();// next milestone
                 soundManager.PlaySFX("Woof");
-                nextSpriteThreshold += 5;
+                nextSpriteThreshold += 7;
             }
 
             // Optionally check for all bubbles cleared

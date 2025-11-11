@@ -8217,16 +8217,14 @@ MonoBehaviour:
   shineparticle: {fileID: 2045018884}
   gameManager: {fileID: 2046125382}
   poppedCount: 0
-  nextSpriteThreshold: 5
-  completedthreshold: 25
+  nextSpriteThreshold: 7
+  completedthreshold: 24
   animator: {fileID: 1249581019}
   stateNames:
   - Dog cleaning
   - Dogclean stage 2
   - Dog stage 3
-  - Dog stage 4
   - Dogstage5
-  - Dogstage6
   - DogHappy
   tutorialPointer: {fileID: 1894404744}
 --- !u!1001 &1548074367
@@ -14736,7 +14734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1764698664
 Transform:
   m_ObjectHideFlags: 0
@@ -15223,7 +15221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862138470
 Transform:
   m_ObjectHideFlags: 0
