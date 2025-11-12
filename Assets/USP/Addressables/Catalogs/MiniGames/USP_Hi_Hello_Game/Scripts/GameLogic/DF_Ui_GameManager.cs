@@ -329,7 +329,13 @@ namespace USP.Minigame.DF_Game
         {
             bool feedingDone = gameManager.GetGameProgress(DF_GameManager.GamePhases.Feeding);
             bool bathDone = gameManager.GetGameProgress(DF_GameManager.GamePhases.Bath);
-            if (feedingDone || bathDone)
+            if (feedingDone && bathDone)
+            {
+                dogAnimator.SetTrigger("DogOutidle");
+                Debug.Log("All mini-games completed. Triggering game ending sequence...");
+                StartCoroutine(GameEndSequence());
+            }
+            else if (feedingDone || bathDone)
             {
                 dogAnimator.SetTrigger("DogOutidle");
                 if(!feedingDone)
@@ -339,11 +345,7 @@ namespace USP.Minigame.DF_Game
                     tutorialPointer.UpdateTargets(tutorialPoints[1]);
                 }
             }
-            if (feedingDone && bathDone)
-            {
-                Debug.Log("All mini-games completed. Triggering game ending sequence...");
-                StartCoroutine(GameEndSequence());
-            }
+           
            
             
         }

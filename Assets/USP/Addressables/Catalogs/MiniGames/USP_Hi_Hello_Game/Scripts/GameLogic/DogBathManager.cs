@@ -46,7 +46,7 @@ namespace USP.Minigame.DF_Game
             gameResolution.HandleSceneSpecificOrthographic(scene_ortho_size);
             poppedCount = 0;
             nextSpriteThreshold = 7;
-
+            currentIndex = 0;
             
 
             // Reactivate and bind bubble click events
