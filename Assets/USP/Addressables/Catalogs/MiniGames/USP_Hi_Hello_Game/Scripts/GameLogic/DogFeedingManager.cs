@@ -154,7 +154,11 @@ namespace USP.Minigame.DF_Game
 
         private void OnSnackDropComplete()
         {
-           
+            if (spawnedSnacks.Count > 0)
+            {
+                tutorialPointer.UpdateTargets(spawnedSnacks[spawnedSnacks.Count - 1].transform);
+            }
+            tutorialPointer.Stoptutorial();
             isSnackDropComplete = true;
             FoodBox.enabled = false;
             Debug.Log("Feeding Complete! All snacks dropped 🎉");
@@ -170,6 +174,11 @@ namespace USP.Minigame.DF_Game
             //Destory snack object
             spawnedSnacks.Remove(snack.gameObject);
             Destroy(snack.gameObject);
+            if (spawnedSnacks.Count > 0)
+            {
+                tutorialPointer.UpdateTargets(spawnedSnacks[spawnedSnacks.Count - 1].transform);
+            }
+            tutorialPointer.Stoptutorial();
             feedIndex++;
             if (feedIndex >= totalTiltsRequired)
             {
