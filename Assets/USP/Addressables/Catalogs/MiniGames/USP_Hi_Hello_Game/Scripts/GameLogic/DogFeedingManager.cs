@@ -32,7 +32,9 @@ namespace USP.Minigame.DF_Game
         private bool isSnackDropComplete=false;
         
         [SerializeField] private TutorialPointer tutorialPointer;
-
+        [SerializeField] private float scene_ortho_size=7.57f;
+        [SerializeField] private GameResolution gameResolution;
+          
         private void OnEnable()
         {
            
@@ -40,7 +42,7 @@ namespace USP.Minigame.DF_Game
 
         public void StartDogFeeding()
         {
-            
+            gameResolution.HandleSceneSpecificOrthographic(scene_ortho_size);
             
             FoodBox.enabled=true;
             // reset state
@@ -183,6 +185,7 @@ namespace USP.Minigame.DF_Game
         private IEnumerator FeedingSequenceCompleted()
         {
             yield return new WaitForSeconds(1f);
+            gameResolution.ResetSceneSpecificOrthographic();
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
         }
         

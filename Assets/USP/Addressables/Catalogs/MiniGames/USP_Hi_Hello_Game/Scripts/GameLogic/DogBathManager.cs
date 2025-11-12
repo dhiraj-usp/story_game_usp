@@ -27,7 +27,9 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private string[] stateNames; // e.g. "Stage1", "Stage2", "Stage3", etc.
         [SerializeField] private TutorialPointer tutorialPointer;
         private int currentIndex = 0;
-        
+
+        [SerializeField] private float scene_ortho_size;
+        [SerializeField] private GameResolution gameResolution;
 
         private void Start()
         {
@@ -41,6 +43,7 @@ namespace USP.Minigame.DF_Game
 
         public void Initialize()
         {
+            gameResolution.HandleSceneSpecificOrthographic(scene_ortho_size);
             poppedCount = 0;
             nextSpriteThreshold = 7;
 
@@ -98,10 +101,13 @@ namespace USP.Minigame.DF_Game
 
         private void OnBathComplete()
         {
+            
             Debug.Log("Bathing complete! 🎉 Dog is fully clean!");
             soundManager.PlaySFX("shine");
+            
             // Optionally tell game manager
             gameManager.UpdateGameProgress(DF_GameManager.GamePhases.Bath,true);
+            gameResolution.ResetSceneSpecificOrthographic();
             gameManager.ChangeGamePhase(DF_GameManager.GamePhases.GameStart);
         }
         

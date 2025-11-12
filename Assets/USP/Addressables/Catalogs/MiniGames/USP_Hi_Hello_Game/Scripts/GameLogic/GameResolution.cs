@@ -27,6 +27,7 @@ namespace USP.Minigame.DF_Game
         [SerializeField] Camera orthographiccamera;
         [SerializeField] GameResolutionData gameResolutionData;
         [SerializeField] private SpriteRenderer background;
+        [SerializeField] private float defaultsizevalue;
         public void Awake()
         {
            CheckDeviceType();
@@ -75,6 +76,43 @@ namespace USP.Minigame.DF_Game
         {
             gameResolutionData.sceneObjects.ForEach(x=>x.ipad_object.SetActive(enable));
             gameResolutionData.sceneObjects.ForEach(x=>x.iphone_object.SetActive(!enable));
+        }
+
+
+        public void HandleSceneSpecificOrthographic(float sizevalue)
+        {
+            if (checkifdeviceisIpad())
+            {
+                return;
+            }
+            defaultsizevalue=orthographiccamera.orthographicSize;
+            orthographiccamera.orthographicSize=sizevalue;
+        }
+
+        public void ResetSceneSpecificOrthographic()
+        {
+            if (checkifdeviceisIpad())
+            {
+                return;
+            }
+            orthographiccamera.orthographicSize=defaultsizevalue;
+        }
+
+        private bool checkifdeviceisIpad()
+        {
+            int width = Screen.width;
+            int height = Screen.height;
+            float aspect = (float)width / height;
+             if (aspect >= 1.3f && aspect <= 1.4f)
+            {
+                Debug.Log("💻 Likely iPad (4:3)");
+                return true;
+                
+            }
+             else
+             {
+                 return false;
+             }
         }
     }
 }
