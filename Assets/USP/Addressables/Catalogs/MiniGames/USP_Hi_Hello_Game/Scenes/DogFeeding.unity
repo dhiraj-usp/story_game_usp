@@ -5065,11 +5065,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableTiltableObject
   mainCamera: {fileID: 371825847}
-  maxTiltAngle: 40
-  tiltThreshold: 15
+  maxTiltAngle: 45
+  tiltThreshold: 25
   tiltSpeed: 10
-  dragSmoothness: 20
+  dragSmoothness: 40
   returnSpeed: 5
+  dragPopScale: 1.08
+  bounceDuration: 0.1
+  wobbleStrength: 2
   currentTilt: 0
 --- !u!61 &949836489
 BoxCollider2D:
@@ -5558,7 +5561,7 @@ MonoBehaviour:
   SnackSprites:
   - {fileID: 21300000, guid: 1ad3589d6308d427ca1dbbe2961de350, type: 3}
   - {fileID: 21300000, guid: 68ae32f07702640b9a2a2bed61eebed4, type: 3}
-  - {fileID: 21300000, guid: 8a00e758c9ce747f7a16355f7842dcb2, type: 3}
+  - {fileID: 21300000, guid: 20958d21dbc6a4bcfbe7ed7e671ae28c, type: 3}
   snackSpawnDelay: 0.5
   shakeblebox: {fileID: 2120544114}
   isCycleActive: 0
@@ -5801,9 +5804,12 @@ MonoBehaviour:
   mainCamera: {fileID: 371825847}
   maxTiltAngle: 25
   tiltThreshold: 0
-  tiltSpeed: 20
-  dragSmoothness: 20
+  tiltSpeed: 5
+  dragSmoothness: 40
   returnSpeed: 5
+  dragPopScale: 1.08
+  bounceDuration: 0.1
+  wobbleStrength: 2
   currentTilt: 0
 --- !u!61 &1112552734
 BoxCollider2D:
@@ -17155,8 +17161,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1862138470}
     m_Modifications:
     - target: {fileID: 296723694332335432, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_Size.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 296723694332335432, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_Size.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 296723694332335432, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20958d21dbc6a4bcfbe7ed7e671ae28c, type: 3}
+    - target: {fileID: 296723694332335432, guid: e61488031050744a981ca02937e9f081, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296723694332335432, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362349499051292107, guid: e61488031050744a981ca02937e9f081, type: 3}
       propertyPath: m_Enabled
@@ -17169,6 +17191,26 @@ PrefabInstance:
     - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650276053152960575, guid: e61488031050744a981ca02937e9f081, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.24
       objectReference: {fileID: 0}
     - target: {fileID: 4791833480160422225, guid: e61488031050744a981ca02937e9f081, type: 3}
       propertyPath: m_LocalPosition.x
