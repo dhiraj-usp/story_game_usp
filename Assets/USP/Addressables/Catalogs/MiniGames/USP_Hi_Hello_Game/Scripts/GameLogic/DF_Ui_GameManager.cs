@@ -362,7 +362,7 @@ namespace USP.Minigame.DF_Game
 
             // Dog says “Bye!”
             dogfinalspeechbubble.gameObject.SetActive(true);
-            tutorialPointer.UpdateTargets(tutorialPoints[2]);
+            tutorialPointer.UpdateTargets(tutorialPoints[3]);
             tutorialPointer.Stoptutorial();
            // TutorialPointer.ShowTap(dogfinalspeechbubble.gameObject.transform);
             dogfinalspeechbubble.ShowBubble(0,-1f,false); // Assume index 2 = "Bye!"
