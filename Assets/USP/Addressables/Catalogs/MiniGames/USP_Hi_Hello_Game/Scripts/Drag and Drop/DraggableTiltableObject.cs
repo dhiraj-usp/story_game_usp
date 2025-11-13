@@ -20,6 +20,13 @@ namespace USP.Minigame.DF_Game
         [SerializeField] private float dragSmoothness = 10f;
         [SerializeField] private float returnSpeed = 5f;
 
+        [Header("Visual Feedback")]
+        [SerializeField] private float dragPopScale = 1.08f; // Slight scale-up on grab
+        [SerializeField] private float bounceDuration = 0.1f; // Small bounce duration
+        [SerializeField] private float wobbleStrength = 2f; // Degrees of small rotation wobble
+
+      
+
         [Header("Action Settings")]
         public Action OnTiltThresholdReached;
         public Action OnTiltThresholdnotReached;
@@ -32,6 +39,9 @@ namespace USP.Minigame.DF_Game
         private Collider2D currentOverlapObject;
         private Vector3 originalPosition;
         private Quaternion originalRotation;
+        private Vector3 originalScale;
+
+        private float wobbleTime = 0f;
 
         private void Awake()
         {
@@ -40,6 +50,7 @@ namespace USP.Minigame.DF_Game
 
             originalPosition = transform.position;
             originalRotation = transform.rotation;
+            originalScale = transform.localScale;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -49,6 +60,9 @@ namespace USP.Minigame.DF_Game
             dragOffset = transform.position - mouseWorldPos;
             isDragging = true;
             StopAllCoroutines();
+
+            // ✨ Small "pop" scale effect on grab
+            StartCoroutine(ScaleTo(originalScale * dragPopScale, bounceDuration));
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -66,13 +80,17 @@ namespace USP.Minigame.DF_Game
             currentTilt = Mathf.Lerp(currentTilt, tiltInput * maxTiltAngle, Time.deltaTime * tiltSpeed);
             transform.rotation = Quaternion.Euler(0, 0, -currentTilt);
 
+            // ✨ Add a subtle wobble motion while dragging
+            wobbleTime += Time.deltaTime * 10f;
+            float wobble = Mathf.Sin(wobbleTime) * wobbleStrength * (currentTilt / maxTiltAngle);
+            transform.rotation *= Quaternion.Euler(0, 0, wobble);
+           
             // Trigger once when threshold exceeded
             if (!thresholdTriggered && Mathf.Abs(currentTilt) >= tiltThreshold)
             {
                 thresholdTriggered = true;
                 OnTiltThresholdReached?.Invoke();
             }
-            
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -89,6 +107,9 @@ namespace USP.Minigame.DF_Game
 
         private IEnumerator ReturnToOrigin()
         {
+            // ✨ Small "release bounce" scale-down first
+            StartCoroutine(ScaleTo(originalScale, 0.2f));
+
             while (Vector3.Distance(transform.position, originalPosition) > 0.01f ||
                    Quaternion.Angle(transform.rotation, originalRotation) > 0.5f)
             {
@@ -99,8 +120,27 @@ namespace USP.Minigame.DF_Game
 
             transform.position = originalPosition;
             transform.rotation = originalRotation;
+            transform.localScale = originalScale;
             currentTilt = 0f;
             thresholdTriggered = false;
+        }
+
+        // ✨ Smooth scale animation
+        private IEnumerator ScaleTo(Vector3 targetScale, float duration)
+        {
+            Vector3 startScale = transform.localScale;
+            float time = 0f;
+
+            while (time < duration)
+            {
+                time += Time.deltaTime;
+                float t = time / duration;
+                t = t * t * (3f - 2f * t); // smoothstep easing
+                transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+                yield return null;
+            }
+
+            transform.localScale = targetScale;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

@@ -3591,7 +3591,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 5
@@ -5066,8 +5066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggableTiltableObject
   mainCamera: {fileID: 371825847}
   maxTiltAngle: 45
-  tiltThreshold: 25
-  tiltSpeed: 10
+  tiltThreshold: 30
+  tiltSpeed: 5
   dragSmoothness: 40
   returnSpeed: 5
   dragPopScale: 1.08
@@ -5566,7 +5566,7 @@ MonoBehaviour:
   shakeblebox: {fileID: 2120544114}
   isCycleActive: 0
   tutorialPointer: {fileID: 1894404744}
-  scene_ortho_size: 7.57
+  scene_ortho_size: 6
   gameResolution: {fileID: 1249504352}
 --- !u!1001 &988886533
 PrefabInstance:
@@ -6649,8 +6649,8 @@ Transform:
   m_GameObject: {fileID: 1257055394}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2998877, y: -0.5997751, z: -3.1929162}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01, y: -0.5997751, z: -3.1929162}
+  m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 111303073}
